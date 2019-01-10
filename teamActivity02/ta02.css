@@ -1,11 +1,37 @@
-main{
-background-color: blue;
-}
+
 
 body{
     font-family: Georgia, 'Times New Roman', Times, serif
 }
 
+container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
 h1 {
+ text-align: center;
     font-style: oblique;
+    color: #2e1881;
+}
+
+#starWars {
+background-color: burlywood;
+font-size: medium;
+}
+
+#starTrek {
+background-color: darkcyan;
+font-size: medium;
+}
+
+#drWho {
+background-color: rgb(180, 118, 126);
+font-size: medium;
+}
+
+div:hover{
+font-weight: bolder;
+font-size: x-large;
+font-style: oblique;
 }
