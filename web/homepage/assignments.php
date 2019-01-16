@@ -7,24 +7,27 @@
     <title>Ali Cope | Assignments </title>
     <meta name="description" content="Links to completed assignments for CS 313 a BYU Idaho course. ">
     <!-- fonts -->
-    <link rel="stylesheet" href="/web/homepage/css/normal.css">
+    <link rel="stylesheet" href="css/normal.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
 </head>
 
 <body>
         <header>
             <h1> Masterful Works and Assignments</h1>
+            <?php
+            echo "Current Date : " . date("l.m.d.y") . <br>;
+            ?>
         </header>
         <nav>
-            <button id="menuB">Menu</button>
-            <div class="">
-                <ul id="primaryNav">
-                    <li class=""><a  href="home.html">Home</a></li>
-                    <li class="active"><a  href="assignments.html">Assignments</a></li>
-                    
-                </ul>
-            </div>
-        </nav>
+                <button id="menuB">Toggle Menu</button>
+                <div class="nav">
+                    <ul id="primaryNav">
+                        <li class=""><a href="home.html">Home</a></li>
+                        <li class="active"><a href="assignments.html">Assignments</a></li>
+                    </ul>
+                </div>
+            </nav>
         <main>
             <div id="content-container">
                 <section id="section1">
@@ -33,11 +36,11 @@
                 </section>
             </div>
         </main>
-        <footer>
+        <!-- <footer>
             <p>&copy; <span>Ali Cope </span> CA </p>
-        </footer>
+        </footer> -->
     </div>
-    <script src="/web/homepage/js/main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

@@ -7,18 +7,22 @@
     <title>Ali Cope | Home </title>
     <meta name="description" content=" The main landing page for Ali Cope a student in CS 313 a BYU Idaho course. ">
     <!-- fonts -->
-    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/normal.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
 </head>
 
 <body>
-    <header>
+        <header>
         <h1> Home is Where your Heart is</h1>
         <h2> A series of things I love</h2>
+        <?php
+        echo "Current Date : " . date("l.m.d.y") . <br>;
+        ?>
     </header>
     <nav>
-        <button id="menuB">Menu</button>
-        <div class="">
+        <button id="menuB">Toggle Menu</button>
+        <div class="nav">
             <ul id="primaryNav">
                 <li class="active"><a href="home.html">Home</a></li>
                 <li class=""><a href="assignments.html">Assignments</a></li>
@@ -27,6 +31,10 @@
     </nav>
     <main>
         <div id="content-container">
+            <section id="image">
+                <img src="images/beautiful-bloom-blooming-327089.jpg" alt="purple flower by two eggs" style="width:400px;height:240px;">
+            </section>
+
             <section id="section1">
                 <h2> Creative Problem Solving</h2>
                 <p> The world doesn't need more rich people, or more famous people or even more smart people. What the
@@ -40,22 +48,22 @@
 
                 </ul>
             </section>
+            <br>
             <section id="section2">
                 <h2>Life Changing Books</h2>
                 <ul>
                     <li>
-                        Leadership and Self Deception
+                        Leadership and Self Deception <br> By Arbinger Institute
                         <ul>
-                            <li>By Arbinger Institute</li>
                             <li> This book changed the way that I saw people. It probably saved my marriage. Plus it is
                                 written as a story which makes it highly enjoyable to read. Essential for leaders,
                                 parents, spouses, friends or anyone who interacts with people</li>
                         </ul>
                     </li>
+                    <br>
                     <li>
-                        One Second After
+                        One Second After <br> By William R Forstchen
                         <ul>
-                            <li>By William R Forstchen</li>
                             <li>This novel tells the story of how a man survives an EMP attack on the United States.
                                 This is not a new kind of warfare and we are not doing much to protect ourselves as a
                                 country. This book really helped me have a better understanding for why we must learn
@@ -69,11 +77,11 @@
         </div>
 
     </main>
-    <footer>
+   <!--  <footer>
         <p>&copy; <span>Ali Cope </span> CA </p>
-    </footer>
+    </footer> -->
     </div>
-    <script src="js/home.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
