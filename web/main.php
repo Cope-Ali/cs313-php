@@ -24,7 +24,7 @@
         <button id="menuB">Toggle Menu</button>
         <div class="nav">
             <ul id="primaryNav">
-                <li class="active"><a href="home.html">Home</a></li>
+                <li class="active"><a href="main.php">Home</a></li>
                 <li class=""><a href="assignments.html">Assignments</a></li>
             </ul>
         </div>
