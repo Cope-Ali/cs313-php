@@ -17,7 +17,7 @@
         <h1> Home is Where your Heart is</h1>
         <h2> A series of things I love</h2>
         <?php
-        echo "Current Date : " . date("l.m.d.y") . <br>;
+        echo "Current Date : " . date("l.m.d.y")
         ?>
     </header>
     <nav>
