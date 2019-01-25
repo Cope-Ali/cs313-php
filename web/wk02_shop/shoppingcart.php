@@ -2,11 +2,28 @@
 session_start();
 echo "Shopping Cart";
 if(isset($_SESSION['userName'])){
-
 }
-for ($i = 0; $i < count($_SESSION['cart']); $i++){
-    echo $_SESSION['cart'][$i] . '<br>';
-}
-echo "test";
-
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <?php include("shop_head.php");?>
+    <link rel="stylesheet" href="shoppingStyle.css">
+</head>
+<body>
+
+<?php include("shop_nav.php");?>
+
+<?php
+for ($i = 0; $i < count($_SESSION['cart']); $i++){
+    '<div class="item" id="$i">';
+   '<p>';
+    echo $_SESSION['cart'][$i] . '<br>';
+    '<button type="button" onclick="<?php delete($i) ?>"> Delete From Cart </button>';
+'</p>';
+}
+?>
+
+</body>
+</html>
