@@ -1,6 +1,6 @@
 <?php
 	switch ($_SERVER["SCRIPT_NAME"]) {
-		case "https://sleepy-temple-34043.herokuapp.com/wk02_shop/browse.php":
+		case "wk02_shop/browse.php":
 			$CURRENT_PAGE = "Browse"; 
 			$PAGE_TITLE = "Browse - Find the chicken of your DREAMS!";
 			break;
