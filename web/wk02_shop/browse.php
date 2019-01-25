@@ -6,7 +6,8 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-	<?php include("shop_head.php");?>
+    <?php include("shop_head.php");?>
+    <link rel="stylesheet" href="shoppingStyle.css">
 </head>
 <body>
 
