@@ -6,8 +6,8 @@ if(isset($_SESSION['userName'])){
 
 function delete($i)
 {
-  \unset($array[1]);
-    
+  \unset($_SESSION['cart'][$i]);
+
 }
 ?>
 
