@@ -8,16 +8,19 @@
 	  </li>
 	  <li class="nav-item">
 	    <a class="nav-link <?php if ($CURRENT_PAGE == "Checkout") {?>active<?php }?>" href="checkout.php">Checkout</a>
-      </li>
-      <li class="clear"></li>
+    
 	</ul>
 </div>
 
 <style>
 
+.nav{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
 .nav-item {
-float: left;
-width: 400px;
+
 background-color: #86aeef;
 padding; 30px;
 list-style-type:none;
