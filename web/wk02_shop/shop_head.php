@@ -8,7 +8,7 @@
 <style>
 
 header {
-    background-color: blue;
+    background-color: #1968e8;
     Font-family: serif;
     color: white;
     padding: 25px;

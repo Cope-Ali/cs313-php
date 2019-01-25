@@ -11,3 +11,17 @@
 	  </li>
 	</ul>
 </div>
+
+<style>
+
+.nav-item {
+float: left;
+width: 100 px;
+background-color: #86aeef;
+
+}
+
+
+
+
+</style>
