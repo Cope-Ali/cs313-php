@@ -26,7 +26,8 @@ for ($i = 0; $i < count($_SESSION['cart']); $i++){
     echo '<p>';
     echo $_SESSION['cart'][$i] . '<br>';
     echo '<button type="button" onclick="<?php delete($i) ?>"> Delete From Cart </button>';
-    echo '</p>';
+    echo '</p> </div>';
+    
 }
 ?>
 
