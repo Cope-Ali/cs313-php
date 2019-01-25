@@ -17,11 +17,11 @@ if(isset($_SESSION['userName'])){
 
 <?php
 for ($i = 0; $i < count($_SESSION['cart']); $i++){
-    '<div class="item" id="$i">';
-   '<p>';
+    echo '<div class="item" id="$i">';
+    echo '<p>';
     echo $_SESSION['cart'][$i] . '<br>';
-    '<button type="button" onclick="<?php delete($i) ?>"> Delete From Cart </button>';
-'</p>';
+    echo '<button type="button" onclick="<?php delete($i) ?>"> Delete From Cart </button>';
+    echo '</p>';
 }
 ?>
 
