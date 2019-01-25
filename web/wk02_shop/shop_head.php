@@ -9,6 +9,7 @@
 
 header {
     background-color: blue;
+    Font-family: serif;
     color: white;
     padding: 25px;
     text-align: center;
