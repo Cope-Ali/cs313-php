@@ -17,7 +17,7 @@
 
 .nav-item {
 float: left;
-width: 400 px;
+width: 400px;
 background-color: #86aeef;
 padding; 30px;
 list-style-type:none;
@@ -25,6 +25,7 @@ list-style-type:none;
 }
 
 .clear{
+    list-style-type:none;
     float: clear;
 }
 
