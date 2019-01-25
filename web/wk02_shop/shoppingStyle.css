@@ -14,6 +14,10 @@ body{
     padding: 10px;
 }
 
+h3{
+    float: none;
+}
+
 img{
     float: left;
     margin: 20px;
