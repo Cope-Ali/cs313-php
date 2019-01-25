@@ -3,6 +3,12 @@ session_start();
 echo "Shopping Cart";
 if(isset($_SESSION['userName'])){
 }
+
+function delete($i)
+{
+  \unset($array[1]);
+    
+}
 ?>
 
 <!DOCTYPE html>
