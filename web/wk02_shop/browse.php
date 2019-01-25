@@ -7,8 +7,8 @@ $cartContents = array();
 $_SESSION["cart"] = $cartContents;
 
 function addCart($item){
-array_push($cartContents, $item);
-$_SESSION["cart"] = $cartContents;
+array_push(global $cartContents, $item);
+$_SESSION["cart"] = global $cartContents;
 }
 
 ?>
