@@ -1,4 +1,8 @@
-<?php include("shop_config.php");?>
+<!-- <?php include("shop_config.php");?> -->
+<?php
+//start session to store cart
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,28 +16,45 @@
 	<h2>Available Chickens</h2>
 	<p>Here are our currently available chickens. Please check back often as our stock is frequently changing due to my addiction to buying baby chicks everytime I'm at the feed store.</p>
 </div>
-<div class="item" id="">
-    <h3> Chicken Name </h3>
-    <img>
-    <p> Chicken Description </p>
+<div class="item" id="fluffer">
+    <?php    
+    //add chicken to session variables
+    $_SESSION["fluffer"] = "false";
+    ?>
+    <h3> Frau Flufferbutt </h3>
+    <img src="images/frau.jpg" alt="Very fluffy small black and white chicken">
+    <p> Frau Flufferbutt may look small and dainty, but she can hold her own. She keeps all the little chicks in line and doesn't take anything from the full size birds either. As a cochin bird, her small stature is full size and she will lay dainty, mini green eggs. You can never go wrong watching her little waddly run as she races around the yard.  </p>
+    <button type="button" onclick="$_SESSION['fluffer']='true'">Add to Cart </button>
 </div>
 
-<div class="item" id="">
-    <h3> Chicken Name </h3>
-    <img>
-    <p> Chicken Description </p>
+<div class="item" id="princess">
+<?php    
+    //add chicken to session variables
+    $_SESSION["princess"] = "false";
+    ?>
+    <h3> Princess Snow White </h3>
+    <img src="images/snow_white.jpg" alt="Large White Chicken with a few black tipped feathers">
+    <p> Most treasured chicken of all time. Princess Snow White is gentle enough to let even the smallest of determined children pick her up. Yet she is fiesty enough to claim the "best" spot on the nighly perch. She keeps all other chickens in line and is truely the leader of the flock. She keeps a watchful eye out for any humans who may be coming to offer sunflower seeds or yesterday's leftovers. </p>
 </div>
 
-<div class="item" id="">
-    <h3> Chicken Name </h3>
-    <img>
-    <p> Chicken Description </p>
+<div class="item" id="houdini">
+<?php    
+    //add chicken to session variables
+    $_SESSION["houdini"] = "false";
+    ?>
+    <h3> Houdini </h3>
+    <img src="images/houdini.jpg" alt="Mostly white chicken with tan markings">
+    <p> Magical Escaping Chicken! She can get out of any enclosure! She will dig under it, she will fly over it. No nets will stop her she just breaks on through! She will lay brown eggs, but you will probably never find them due to her magical prowess! </p>
 </div>
 
-<div class="item" id="">
-    <h3> Chicken Name </h3>
-    <img>
-    <p> Chicken Description </p>
+<div class="item" id="Roxi">
+<?php    
+    //add chicken to session variables
+    $_SESSION["roxi"] = "false";
+    ?>
+    <h3> Roxi </h3>
+    <img src="images/roxi.jpg" alt="skinny white chicken">
+    <p> Dumber than a box of rocks. Roxi will likely kill herself trying to get THROUGH the fence instead of walking through the open gate just a few inches away. Proof that survival of the fittest, sometimes makes mistakes. She should lay white eggs, assuming normal biological functions are not beyond her limited capabilities. </p>
 </div>
 
 <?php include("shop_footer.php");?>

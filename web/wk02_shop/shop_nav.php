@@ -8,7 +8,6 @@
 	  </li>
 	  <li class="nav-item">
 	    <a class="nav-link <?php if ($CURRENT_PAGE == "Checkout") {?>active<?php }?>" href="checkout.php">Checkout</a>
-    
 	</ul>
 </div>
 
@@ -22,11 +21,8 @@
 }
 
 .nav-item {
-
 background-color: #86aeef;
-padding; 30px;
 list-style-type:none;
-
 }
 
 .clear{
