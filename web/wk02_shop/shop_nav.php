@@ -16,6 +16,8 @@
 
 .nav{
     display: grid;
+    width: 60%;
+    margin: auto;
     grid-template-columns: auto auto auto;
 }
 
