@@ -8,7 +8,8 @@
 	  </li>
 	  <li class="nav-item">
 	    <a class="nav-link <?php if ($CURRENT_PAGE == "Checkout") {?>active<?php }?>" href="checkout.php">Checkout</a>
-	  </li>
+      </li>
+      <li class="clear"></li>
 	</ul>
 </div>
 
@@ -23,6 +24,9 @@ list-style-type:none;
 
 }
 
+.clear{
+    float: clear;
+}
 
 
 
