@@ -2,6 +2,7 @@
 <?php
 //start session to store cart
 session_start();
+$_SESSION['userName'] = 'user';
 $cartContents = array();
 $_SESSION["cart"] = $cartContents;
 
