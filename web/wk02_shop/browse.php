@@ -3,12 +3,10 @@
 //start session to store cart
 session_start();
 $_SESSION['userName'] = 'user';
-$cartContents = array();
-$_SESSION["cart"] = $cartContents;
+$_SESSION["cart"] = array();
 
 function addCart($item){
-array_push(global $cartContents, $item);
-$_SESSION["cart"] = global $cartContents;
+array_push($_SESSION["cart"], $item);
 }
 
 ?>
