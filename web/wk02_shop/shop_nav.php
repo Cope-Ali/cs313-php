@@ -16,8 +16,10 @@
 
 .nav-item {
 float: left;
-width: 100 px;
+width: 400 px;
 background-color: #86aeef;
+padding; 30px;
+list-style-type:none;
 
 }
 
