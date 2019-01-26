@@ -5,6 +5,9 @@ session_start();
 $_SESSION['userName'] = 'user';
 $_SESSION['cart'] = array();
 $_SESSION['frau'] = false;
+$_SESSION['princess'] = false;
+$_SESSION['houdini'] = false;
+$_SESSION['roxi'] = false;
 
 function addCart($item){
 array_push($_SESSION["cart"], $item);
@@ -37,21 +40,21 @@ array_push($_SESSION["cart"], $item);
     <h3> Princess Snow White </h3>
     <img src="images/snow_white.jpg" alt="Large White Chicken with a few black tipped feathers" height="150">
     <p> Most treasured chicken of all time. Princess Snow White is gentle enough to let even the smallest of determined children pick her up. Yet she is fiesty enough to claim the "best" spot on the nighly perch. She keeps all other chickens in line and is truely the leader of the flock. She keeps a watchful eye out for any humans who may be coming to offer sunflower seeds or yesterday's leftovers. </p>
-    <button type="button" onclick="<?php array_push($_SESSION["cart"], 'Princess Snow White') ?>"> Add to Cart </button>
+    <button type="button" onclick="$_SESSION['princess'] = 'true'"> Add to Cart </button>
 </div>
 
 <div class="item" id="houdini">
     <h3> Houdini </h3>
     <img src="images/houdini.jpg" alt="Mostly white chicken with tan markings" height="150">
     <p> Magical Escaping Chicken! She can get out of any enclosure! She will dig under it, she will fly over it. No nets will stop her she just breaks on through! She will lay brown eggs, but you will probably never find them due to her magical prowess! </p>
-    <button type="button" onclick="<?php array_push($_SESSION["cart"], 'Houdini') ?>"> Add to Cart </button>
+    <button type="button" onclick="$_SESSION['houdini'] = 'true'"> Add to Cart </button>
 </div>
 
 <div class="item" id="Roxi">
     <h3> Roxi </h3>
     <img src="images/roxi.jpg" alt="skinny white chicken" height="150">
     <p> Dumber than a box of rocks. Roxi will likely kill herself trying to get THROUGH the fence instead of walking through the open gate just a few inches away. Proof that survival of the fittest, sometimes makes mistakes. She should lay white eggs, assuming normal biological functions are not beyond her limited capabilities. </p>
-    <button type="button" onclick="<?php array_push($_SESSION["cart"], 'Roxi') ?>"> Add to Cart </button>
+    <button type="button" onclick="$_SESSION['roxi'] = 'true'"> Add to Cart </button>
 </div>
 <div class="checkout">
 <a href="shoppingcart.php">Checkout Here</a>

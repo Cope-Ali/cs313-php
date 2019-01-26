@@ -31,11 +31,32 @@ for ($i = 0; $i < count($_SESSION['cart']); $i++){
 }
 ?> -->
 <?php
-if($_SESSION['frau'] = 'true')
+if($_SESSION['frau']='true')
 {
     echo '<p> Frau Flufferbutt </p>
     <img src="images/frau.jpg" alt="Very fluffy small black and white chicken" height="50">
-    <button type="button" onclick="delete()"> Delete From Cart </button>';
+    <button type="button" onclick="$_SESSION['frau']='false'"> Delete From Cart </button>';
+}
+
+if($_SESSION['princess']='true')
+{
+    echo '<p> Princess Snow White </p>
+    <img src="images/snow_white.jpg" alt="Very fluffy small black and white chicken" height="50">
+    <button type="button" onclick="$_SESSION['princess']='false'"> Delete From Cart </button>';
+}
+
+if($_SESSION['houdini']='true')
+{
+    echo '<p> Houdini </p>
+    <img src="images/houdini.jpg" alt="Very fluffy small black and white chicken" height="50">
+    <button type="button" onclick="$_SESSION['houdini']='false'"> Delete From Cart </button>';
+}
+
+if($_SESSION['roxi']='true')
+{
+    echo '<p> Roxi </p>
+    <img src="images/roxi.jpg" alt="Very fluffy small black and white chicken" height="50">
+    <button type="button" onclick="$_SESSION['roxi']='false'"> Delete From Cart </button>';
 }
 ?>
 </body>
