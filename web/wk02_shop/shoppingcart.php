@@ -30,13 +30,13 @@ for ($i = 0; $i < count($_SESSION['cart']); $i++){
     
 }
 ?> -->
-
+<?php
 if($_SESSION['frau'] = 'true')
 {
-    <p> Frau Flufferbutt </p>
+    echo '<p> Frau Flufferbutt </p>
     <img src="images/frau.jpg" alt="Very fluffy small black and white chicken" height="50">
-    <button type="button" onclick="delete()"> Delete From Cart </button>
+    <button type="button" onclick="delete()"> Delete From Cart </button>'
 }
-
+?>
 </body>
 </html>
