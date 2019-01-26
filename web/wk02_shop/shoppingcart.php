@@ -35,7 +35,7 @@ if($_SESSION['frau'] = 'true')
 {
     echo '<p> Frau Flufferbutt </p>
     <img src="images/frau.jpg" alt="Very fluffy small black and white chicken" height="50">
-    <button type="button" onclick="delete()"> Delete From Cart </button>'
+    <button type="button" onclick="delete()"> Delete From Cart </button>';
 }
 ?>
 </body>
