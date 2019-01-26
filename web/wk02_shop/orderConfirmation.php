@@ -36,7 +36,7 @@ if(isset($_SESSION['userName'])){
 
 
 <h2> Thank you for your order! </h2>
-
+<?php print_r($_SESSION);?>
 <h3> Customer Information </h3>
 <?php
 for ($i = 0; $i < count($_SESSION['customer']); $i++){
