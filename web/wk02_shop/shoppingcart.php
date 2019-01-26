@@ -24,7 +24,7 @@ function delete($i)
 for ($i = 0; $i < count($_SESSION['cart']); $i++){
     echo '<div class="item" id="$i">';
     echo '<p>';
-    echo $_SESSION['cart'][$i] . '<br>';
+    echo $_SESSION['cart'][$i] . '<br';
     echo '<button type="button" onclick="<?php delete($i) ?>"> Delete From Cart </button>';
     echo '</p> </div>';
     
