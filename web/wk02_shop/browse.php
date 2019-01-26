@@ -15,6 +15,7 @@ $_SESSION["roxi"] = "false";
 function addCart($item){
 array_push($_SESSION["cart"], $item);
 }
+echo $_POST["frau"];
 
 ?>
 <!DOCTYPE html>
@@ -31,11 +32,13 @@ array_push($_SESSION["cart"], $item);
 	<h2>Available Chickens</h2>
 	<p>Here are our currently available chickens. Please check back often as our stock is frequently changing due to my addiction to buying baby chicks everytime I am at the feed store.</p>
 </div>
+<form action="browse.php" method="post">
 <div class="item" id="fluffer">
     <h3> Frau Flufferbutt </h3>
     <img src="images/frau.jpg" alt="Very fluffy small black and white chicken" height="150">
     <p> Frau Flufferbutt may look small and dainty, but she can hold her own. She keeps all the little chicks in line and doesn't take anything from the full size birds either. As a cochin bird, her small stature is full size and she will lay dainty, mini green eggs. You can never go wrong watching her little waddly run as she races around the yard.  </p>
-   <button type="button" onclick="<?php array_push($cart, "frau"); ?>"> Add to Cart</button>
+   Quantity: <input type = "number" name="frau" value="0" >
+   <input type="submit" value="Add to Cart">
 </div>
 
 <div class="item" id="princess"> 
