@@ -16,20 +16,20 @@ if($_POST["frau"] > 0){
 }
 
 echo $_POST["snow"];
-if($_POST["frau"] > 0){
-    echo "Frau more than one";
+if($_POST["snow"] > 0){
+    echo "snow more than one";
     array_push($_SESSION["cart"], "snow");
 }
 
 echo $_POST["houdini"];
-if($_POST["frau"] > 0){
-    echo "Frau more than one";
+if($_POST["houdini"] > 0){
+    echo "houdini more than one";
     array_push($_SESSION["cart"], "houdini");
 }
 
 echo $_POST["roxi"];
-if($_POST["frau"] > 0){
-    echo "Frau more than one";
+if($_POST["roxi"] > 0){
+    echo "roxi more than one";
     array_push($_SESSION["cart"], "roxi");
 }
 
