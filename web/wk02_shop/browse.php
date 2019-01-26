@@ -2,6 +2,7 @@
 <?php
 //start session to store cart
 session_start();
+<?php print_r($_SESSION);?>
 $_SESSION['userName'] = 'user';
 $_SESSION['cart'] = array();
 $_SESSION["frau"] = "false";
