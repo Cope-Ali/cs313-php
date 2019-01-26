@@ -57,7 +57,7 @@ if($frau_qty>0)
     echo '<p> Frau Flufferbutt </p>';
    echo  '<img src="images/frau.jpg" alt="Very fluffy small black and white chicken" height="50">';
   echo 'Total in Cart :' . $frau_qty . '<br>';
-   echo '  Quantity: <input type = "number" name="frau" value=$frau_qty >
+   echo '  Quantity: <input type = "number" name="frau" value="$frau_qty" >
    <input type="submit" value="Update Cart"> <br><br>';
 }
 
