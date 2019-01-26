@@ -20,7 +20,7 @@ function delete($i)
 
 <?php include("shop_nav.php");?>
 
-<?php
+<!-- <?php
 for ($i = 0; $i < count($_SESSION['cart']); $i++){
     echo '<div class="item" id="$i">';
     echo '<p>';
@@ -29,7 +29,14 @@ for ($i = 0; $i < count($_SESSION['cart']); $i++){
     echo '</p> </div>';
     
 }
-?>
+?> -->
+
+if($_SESSION['frau'] = 'true')
+{
+    <p> Frau Flufferbutt </p>
+    <img src="images/frau.jpg" alt="Very fluffy small black and white chicken" height="50">
+    <button type="button" onclick="delete()"> Delete From Cart </button>
+}
 
 </body>
 </html>
