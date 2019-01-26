@@ -14,6 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $state = test_input($_POST["state"]);
     $zip = test_input($_POST["zip"]);
     array_push($_SESSION['customer'],$name, $email, $street, $city, $state, $zip);
+    header("location:orderConfirmation.php");
   }
   
   function test_input($data) {
@@ -34,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <?php include("shop_nav.php");?>
 
-<form action="orderConfirmation.php" method="post">
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
     <input type="text" name="Name" placeholder="Name"> <br>
     <input type="text" name="Email" placeholder="Email"> <br>
     <input type="text" name="Street" placeholder="Street"> <br>
