@@ -11,26 +11,30 @@ $_SESSION['cart'] = array();
 
 echo $_POST["frau"];
 if($_POST["frau"] > 0){
-    echo "Frau more than one";
+    for($i=0; $i<$_POST["frau"]; $i++){
     array_push($_SESSION["cart"], "frau");
+    }
 }
 
 echo $_POST["snow"];
 if($_POST["snow"] > 0){
-    echo "snow more than one";
+    for($i=0; $i<$_POST["snow"]; $i++){
     array_push($_SESSION["cart"], "snow");
+    }
 }
 
 echo $_POST["houdini"];
 if($_POST["houdini"] > 0){
-    echo "houdini more than one";
+    for($i=0; $i<$_POST["houdini"]; $i++){
     array_push($_SESSION["cart"], "houdini");
+    }
 }
 
 echo $_POST["roxi"];
 if($_POST["roxi"] > 0){
-    echo "roxi more than one";
+    for($i=0; $i<$_POST["roxi"]; $i++){
     array_push($_SESSION["cart"], "roxi");
+    }
 }
 
 ?>
