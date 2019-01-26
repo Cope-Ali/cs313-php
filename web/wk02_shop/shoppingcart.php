@@ -49,7 +49,7 @@ echo $roxi_qty;
 
 <?php include("shop_nav.php");?>
 
-<form action="checkout.php" method="post">
+<!-- <form action="checkout.php" method="post"> -->
 <?php
 if($frau_qty>0)
 {
@@ -57,8 +57,8 @@ if($frau_qty>0)
     echo '<p> Frau Flufferbutt </p>';
    echo  '<img src="images/frau.jpg" alt="Very fluffy small black and white chicken" height="50">';
   echo 'Total in Cart :' . $frau_qty . '<br>';
-   echo '  Quantity: <input type = "number" name="frau" value="$frau_qty" >
-   <input type="submit" value="Update Cart"> <br><br>';
+   echo '  Quantity: <input type = "number" name="frau" value=$frau_qty >
+   <input type="submit" value="Update Cart"> </form><br><br>';
 }
 
 if($snow_qty>0)
@@ -91,6 +91,6 @@ if($roxi_qty>0)
    <input type="submit" value="Update Cart"> <br><br>';
 }
 ?>
-</form>
+<!-- </form> -->
 </body>
 </html>
