@@ -1,6 +1,6 @@
 <?php
 session_start();
-<?php print_r($_SESSION);?>
+print_r($_SESSION);
 echo "Check Out";
 if(isset($_SESSION['userName'])){
 }

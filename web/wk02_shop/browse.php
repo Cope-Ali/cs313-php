@@ -2,7 +2,7 @@
 <?php
 //start session to store cart
 session_start();
-<?php print_r($_SESSION);?>
+ print_r($_SESSION);
 $_SESSION['userName'] = 'user';
 $_SESSION['cart'] = array();
 $_SESSION["frau"] = "false";
@@ -27,7 +27,7 @@ array_push($_SESSION["cart"], $item);
 
 <div class="container" id="intro">
 	<h2>Available Chickens</h2>
-	<p>Here are our currently available chickens. Please check back often as our stock is frequently changing due to my addiction to buying baby chicks everytime I'm at the feed store.</p>
+	<p>Here are our currently available chickens. Please check back often as our stock is frequently changing due to my addiction to buying baby chicks everytime I am at the feed store.</p>
 </div>
 <div class="item" id="fluffer">
     <h3> Frau Flufferbutt </h3>
