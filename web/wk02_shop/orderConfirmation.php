@@ -40,14 +40,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <h3> Customer Information </h3>
 <?php
 for ($i = 0; $i < count($_SESSION['customer']); $i++){
-echo $_SESSION['customer'][$i] . '<br';
+echo $_SESSION['customer'][$i] . '<br>';
 }
 ?>
 
 <h3> Order Information </h3>
 <?php
 for ($i = 0; $i < count($_SESSION['cart']); $i++){
-    echo $_SESSION['cart'][$i] . '<br';
+    echo $_SESSION['cart'][$i] . '<br>';
 }
 ?>
 
