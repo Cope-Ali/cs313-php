@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $state = test_input($_POST["state"]);
     $zip = test_input($_POST["zip"]);
     array_push($_SESSION['customer'],$name, $email, $street, $city, $state, $zip);
-    header("location:orderConfirmation.php");
+    // header("location:orderConfirmation.php");
   }
   
   function test_input($data) {
@@ -45,5 +45,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <button type="submit">Submit</button>
 </form>
 <button type="button" onclick="shoppingcart.php"> Return to Cart </button>
+
+<h3> Customer Information </h3>
+<?php
+for ($i = 0; $i < count($_SESSION['customer']); $i++){
+echo $_SESSION['customer'][$i] . '<br>';
+}
+?>
+
 </body>
 </html>
