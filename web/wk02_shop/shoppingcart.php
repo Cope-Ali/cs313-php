@@ -49,39 +49,48 @@ echo $roxi_qty;
 
 <?php include("shop_nav.php");?>
 
-
+<form action="checkout.php" method="post">
 <?php
 if($frau_qty>0)
 {
+    echo '<form action="shoppingcart.php" method="post">';
     echo '<p> Frau Flufferbutt </p>';
    echo  '<img src="images/frau.jpg" alt="Very fluffy small black and white chicken" height="50">';
   echo 'Total in Cart :' . $frau_qty . '<br>';
-   echo ' <button type="button" onclick="$_SESSION["frau"]="false""> Delete From Cart </button>';
+   echo '  Quantity: <input type = "number" name="frau" value=$frau_qty >
+   <input type="submit" value="Update Cart"> <br><br>';
 }
 
 if($snow_qty>0)
 {
+    echo '<form action="shoppingcart.php" method="post">';
     echo '<p> Princess Snow White </p>
     <img src="images/snow_white.jpg" alt="Very fluffy small black and white chicken" height="50">';
     echo 'Total in Cart :' . $snow_qty . '<br>';
-    echo '<button type="button" onclick="$_SESSION["princess"]="false""> Delete From Cart </button>';
+    echo '  Quantity: <input type = "number" name="snow" value=$snow_qty >
+   <input type="submit" value="Update Cart"> <br><br>';
 }
 
 if($houdini_qty>0)
 {
+    echo '<form action="shoppingcart.php" method="post">';
     echo '<p> Houdini </p>
     <img src="images/houdini.jpg" alt="Very fluffy small black and white chicken" height="50">';
     echo 'Total in Cart :' . $houdini_qty . '<br>';
-    echo '<button type="button" onclick="$_SESSION["houdini"]="false""> Delete From Cart </button>';
+    echo '  Quantity: <input type = "number" name="houdini" value=$houdini_qty >
+    <input type="submit" value="Update Cart"> <br><br>';
 }
 
 if($roxi_qty>0)
 {
+    echo '<form action="shoppingcart.php" method="post">';
     echo '<p> Roxi </p>
     <img src="images/roxi.jpg" alt="Very fluffy small black and white chicken" height="50">';
     echo 'Total in Cart :' . $roxi_qty . '<br>';
-    echo '<button type="button" onclick="$_SESSION["roxi"]="false""> Delete From Cart </button>';
+    echo '  Quantity: <input type = "number" name="roxi" value=$roxi_qty >
+   <input type="submit" value="Update Cart"> <br><br>';
 }
 ?>
+</form>
 </body>
 </html>
