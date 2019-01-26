@@ -31,6 +31,7 @@ echo $_SESSION['customer'][$i] . '<br';
 <?php
 for ($i = 0; $i < count($_SESSION['cart']); $i++){
     echo $_SESSION['cart'][$i] . '<br';
+}
 ?>
 
 </body>
