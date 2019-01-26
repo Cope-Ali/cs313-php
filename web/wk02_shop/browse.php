@@ -2,14 +2,16 @@
 <?php
 //start session to store cart
 session_start();
- print_r($_SESSION);
+print_r($_SESSION);
+if(!isset($_SESSION['userName'])){
+
 $_SESSION['userName'] = 'user';
 $_SESSION['cart'] = array();
 $_SESSION["frau"] = "false";
 $_SESSION["princess"] = "false";
 $_SESSION["houdini"] = "false";
 $_SESSION["roxi"] = "false";
-
+}
 function addCart($item){
 array_push($_SESSION["cart"], $item);
 }
