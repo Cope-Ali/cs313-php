@@ -4,18 +4,18 @@ print_r($_SESSION);
 echo "Shopping Cart";
 if(isset($_SESSION['userName'])){
 if(!isset($frau_qty)){
-$frau_qty=-1;
+$frau_qty=0;
 echo $frau_qty;
 }
 if(!isset($snow_qty)){
-$snow_qty=-1;
+$snow_qty=0;
 echo $snow_qty;
 }
 if(!isset($houdini_qty)){
-$houdini_qty = -1;
+$houdini_qty =0;
 }
 if(!isset($roxi_qty)){
-$roxi_qty = -1;
+$roxi_qty = 0;
 echo $roxi_qty;
 }
 
@@ -23,15 +23,21 @@ foreach ($_SESSION["cart"] as $key => $value) {
     switch($value) {
         case "frau":
             $frau_qty++;
+            $value = "";
             break;
         case "snow":
             $snow_qty++;
+            $value = "";
             break;
         case "houdini":
             $houdini_qty++;
+            $value = "";
             break;
         case "roxi":
             $roxi_qty++;
+            $value = "";
+            break;
+        case "":
             break;
     }
 }
