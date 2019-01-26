@@ -113,6 +113,8 @@ if($roxi_qty>0)
 }
 ?>
 <input type="submit" value="Update Cart">
+<input type="submit" formaction="checkout.php" value="Proceed to Checkout">
 </form>
+
 </body>
 </html>

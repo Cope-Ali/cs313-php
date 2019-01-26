@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $city = test_input($_POST["city"]);
     $state = test_input($_POST["state"]);
     $zip = test_input($_POST["zip"]);
-    array_push($_SESSION['customer'],$name, $email, $street, $city, $state, $zip);
+    array_push($_SESSION['customer'], $name, $email, $street, $city, $state, $zip);
     // header("location:orderConfirmation.php");
   }
   
@@ -24,10 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $data = htmlspecialchars($data);
     return $data;
   }
-  echo $_POST["frau"];
-if($_POST["frau"] > 0){
-    echo "Frau more than one";}
-    
+
 ?>
 
 <!DOCTYPE html>
@@ -39,6 +36,45 @@ if($_POST["frau"] > 0){
 <body>
 
 <?php include("shop_nav.php");?>
+
+<h2> Cart Contents </h2>
+<?php
+if($_POST['frau']>0)
+{
+    
+    echo '<p> Frau Flufferbutt </p>';
+   echo  '<img src="images/frau.jpg" alt="Very fluffy small black and white chicken" height="50">';
+  echo 'Total in Cart :' . $_POST['frau'] . '<br>';
+
+}
+
+if($_POST['snow']>0)
+{
+    
+    echo '<p> Princess Snow White </p>
+    <img src="images/snow_white.jpg" alt="Very fluffy small black and white chicken" height="50">';
+    echo 'Total in Cart :' . $_POST['snow'] . '<br>';
+
+}
+
+if($_POST['houdini']>0)
+{
+    
+    echo '<p> Houdini </p>
+    <img src="images/houdini.jpg" alt="Very fluffy small black and white chicken" height="50">';
+    echo 'Total in Cart :' . $_POST['houdini']. '<br>';
+    
+}
+
+if($_POST['roxi']>0)
+{
+    
+    echo '<p> Roxi </p>
+    <img src="images/roxi.jpg" alt="Very fluffy small black and white chicken" height="50">';
+    echo 'Total in Cart :' . $_POST['roxi'] . '<br>';
+   
+}
+?>
 
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
     <input type="text" name="Name" placeholder="Name"> <br>
