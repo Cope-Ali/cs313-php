@@ -3,15 +3,21 @@ session_start();
 print_r($_SESSION);
 echo "Shopping Cart";
 if(isset($_SESSION['userName'])){
-
-$frau_qty=0;
+if(!isset($frau_qty)){
+$frau_qty=-1;
 echo $frau_qty;
-$snow_qty=0;
+}
+if(!isset($snow_qty)){
+$snow_qty=-1;
 echo $snow_qty;
-$houdini_qty = 0;
-echo $houdini_qty;
-$roxi_qty = 0;
+}
+if(!isset($houdini_qty)){
+$houdini_qty = -1;
+}
+if(!isset($roxi_qty)){
+$roxi_qty = -1;
 echo $roxi_qty;
+}
 
 foreach ($_SESSION["cart"] as $key => $value) {
     switch($value) {
@@ -67,7 +73,7 @@ if($snow_qty>0)
     echo '<p> Princess Snow White </p>
     <img src="images/snow_white.jpg" alt="Very fluffy small black and white chicken" height="50">';
     echo 'Total in Cart :' . $snow_qty . '<br>';
-    echo '  Quantity: <input type = "number" name="snow" value=$snow_qty >
+    echo '  Quantity: <input type = "number" name="snow" value='.$snow_qty.' >
    <input type="submit" value="Update Cart"> <br><br>';
 }
 
@@ -77,7 +83,7 @@ if($houdini_qty>0)
     echo '<p> Houdini </p>
     <img src="images/houdini.jpg" alt="Very fluffy small black and white chicken" height="50">';
     echo 'Total in Cart :' . $houdini_qty . '<br>';
-    echo '  Quantity: <input type = "number" name="houdini" value=$houdini_qty >
+    echo '  Quantity: <input type = "number" name="houdini" value='.$houdini_qty.' >
     <input type="submit" value="Update Cart"> <br><br>';
 }
 
@@ -87,7 +93,7 @@ if($roxi_qty>0)
     echo '<p> Roxi </p>
     <img src="images/roxi.jpg" alt="Very fluffy small black and white chicken" height="50">';
     echo 'Total in Cart :' . $roxi_qty . '<br>';
-    echo '  Quantity: <input type = "number" name="roxi" value=$roxi_qty >
+    echo '  Quantity: <input type = "number" name="roxi" value='.$roxi_qty.' >
    <input type="submit" value="Update Cart"> <br><br>';
 }
 ?>
