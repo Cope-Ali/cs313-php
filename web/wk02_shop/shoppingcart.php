@@ -3,18 +3,18 @@ session_start();
 print_r($_SESSION);
 echo "Shopping Cart";
 
-if(!isset($frau_qty)){
+if($frau_qty==0){
 $frau_qty=0;
 echo $frau_qty;
 }
-if(!isset($snow_qty)){
+if($snow_qty==0){
 $snow_qty=0;
 echo $snow_qty;
 }
-if(!isset($houdini_qty)){
+if($houdini_qty==0){
 $houdini_qty =0;
 }
-if(!isset($roxi_qty)){
+if($roxi_qty==0){
 $roxi_qty = 0;
 echo $roxi_qty;
 }
@@ -43,6 +43,12 @@ foreach ($_SESSION["cart"] as $key => $value) {
     }
 }
 $_SESSION["cart"] = array();
+}
+else{
+    $roxi_qty = $_POST["roxi"];
+    $snow_qty = $_POST["snow"];
+    $houdini_qty = $_POST["houdini"];
+    $frau_qty = $_POST["frau"];
 }
 
 echo $frau_qty;
