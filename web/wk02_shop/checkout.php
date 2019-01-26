@@ -26,7 +26,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
   echo $_POST["frau"];
 if($_POST["frau"] > 0){
-    echo "Frau more than one";
+    echo "Frau more than one";}
+    
 ?>
 
 <!DOCTYPE html>

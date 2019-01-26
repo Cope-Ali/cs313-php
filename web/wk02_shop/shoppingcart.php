@@ -9,6 +9,9 @@ function delete($i)
 {
   unset($_SESSION['cart'][$i]);
 }
+echo $_POST["frau"];
+if($_POST["frau"] > 0){
+    echo "Frau more than one";}
 ?>
 
 <!DOCTYPE html>
