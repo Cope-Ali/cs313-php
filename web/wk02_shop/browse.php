@@ -16,6 +16,9 @@ function addCart($item){
 array_push($_SESSION["cart"], $item);
 }
 echo $_POST["frau"];
+if($_POST["frau"] > 0){
+    echo "Frau more than one";
+}
 
 ?>
 <!DOCTYPE html>
