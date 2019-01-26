@@ -19,6 +19,7 @@ $roxi_qty = 0;
 echo $roxi_qty;
 }
 
+if(count($_SESSION["cart"]) > 0){
 foreach ($_SESSION["cart"] as $key => $value) {
     switch($value) {
         case "frau":
@@ -40,6 +41,8 @@ foreach ($_SESSION["cart"] as $key => $value) {
         case "":
             break;
     }
+}
+$_SESSION["cart"] = array();
 }
 
 echo $frau_qty;
