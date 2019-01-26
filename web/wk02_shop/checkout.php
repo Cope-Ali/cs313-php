@@ -24,6 +24,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $data = htmlspecialchars($data);
     return $data;
   }
+  echo $_POST["frau"];
+if($_POST["frau"] > 0){
+    echo "Frau more than one";
 ?>
 
 <!DOCTYPE html>
