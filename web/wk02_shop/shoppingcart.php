@@ -2,7 +2,7 @@
 session_start();
 print_r($_SESSION);
 echo "Shopping Cart";
-if(isset($_SESSION['userName'])){
+
 if(!isset($frau_qty)){
 $frau_qty=0;
 echo $frau_qty;
@@ -50,7 +50,7 @@ echo $snow_qty;
 echo $houdini_qty;
 echo $roxi_qty;
 
-}
+
 
 ?>
 
