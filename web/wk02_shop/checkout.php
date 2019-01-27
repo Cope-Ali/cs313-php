@@ -13,7 +13,7 @@ session_start();
 
 <?php include("shop_nav.php");?>
 
-<h2> Cart Contents </h2>
+<h3> Cart Contents </h2>
 <?php
 if($_POST['frau']>0)
 {
@@ -66,6 +66,7 @@ if($_POST['roxi']>0)
 <br>
 <br>
 <hr>
+<h3>Personal Information</h3>
 <form action="orderConfirmation.php" method="post">
     <input type="text" name="Name" placeholder="Name"> <br>
     <input type="text" name="Email" placeholder="Email"> <br>
