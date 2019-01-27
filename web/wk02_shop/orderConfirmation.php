@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $street = test_input($_POST["Street"]);
     $city = test_input($_POST["City"]);
     $state = test_input($_POST["State"]);
-    $zip = test_input($_POST["Zip"]);
+    $zip = test_input($_POST["ZipCode"]);
   }
   
   function test_input($data) {
