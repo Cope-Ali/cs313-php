@@ -1,10 +1,5 @@
 <?php
 session_start();
-print_r($_SESSION);
-echo "Check Out";
-if(isset($_SESSION['userName'])){
-}
-
 
 ?>
 

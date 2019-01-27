@@ -1,9 +1,5 @@
 <?php
 session_start();
-print_r($_SESSION);
-echo "Order Confirmation";
-if(isset($_SESSION['userName'])){
-}
 
 if($frau_qty==0){
     $frau_qty=0;

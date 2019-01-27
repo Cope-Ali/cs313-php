@@ -2,7 +2,6 @@
 <?php
 //start session to store cart
 session_start();
-print_r($_SESSION);
 if(!isset($_SESSION['userName'])){
 
 $_SESSION['userName'] = 'user';
