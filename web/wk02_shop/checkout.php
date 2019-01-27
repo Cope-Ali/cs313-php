@@ -7,7 +7,7 @@ if(isset($_SESSION['userName'])){
 $_SESSION['customer']=array();
 $name = $email = $street = $city = $state = $zip = "";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+/* if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = test_input($_POST["name"]);
     $email = test_input($_POST["email"]);
     $street = test_input($_POST["street"]);
@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
     return $data;
-  }
+  } */
 
 ?>
 

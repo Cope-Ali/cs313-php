@@ -48,12 +48,12 @@ if($frau_qty==0){
     }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = test_input($_POST["name"]);
-    $email = test_input($_POST["email"]);
-    $street = test_input($_POST["street"]);
-    $city = test_input($_POST["city"]);
-    $state = test_input($_POST["state"]);
-    $zip = test_input($_POST["zip"]);
+    $name = test_input($_POST["Name"]);
+    $email = test_input($_POST["Email"]);
+    $street = test_input($_POST["Street"]);
+    $city = test_input($_POST["City"]);
+    $state = test_input($_POST["State"]);
+    $zip = test_input($_POST["Zip"]);
     array_push($_SESSION['customer'],$name, $email, $street, $city, $state, $zip);
   }
   
@@ -82,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <h3> Customer Information </h3>
 <?php
-echo 'Name: ' . $_POST['name'] . '<br>';
+echo 'Name: ' . $_POST['Name'] . '<br>';
 echo 'Email: ' . $email . '<br>';
 
 ?>
@@ -94,7 +94,7 @@ if($frau_qty>0)
     
     echo '<p> Frau Flufferbutt </p>';
    echo  '<img src="images/frau.jpg" alt="Very fluffy small black and white chicken" height="50">';
-  echo 'Total :' . $frau_qty . '<br>';
+  echo ' <p> Total :' . $frau_qty . '</p><br>';
 
 }
 
@@ -103,7 +103,7 @@ if($snow_qty>0)
     
     echo '<p> Princess Snow White </p>
     <img src="images/snow_white.jpg" alt="Very fluffy small black and white chicken" height="50">';
-    echo 'Total :' . $snow_qty . '<br>';
+    echo '<p>Total :' . $snow_qty . '</p><br>';
 
 }
 
@@ -112,7 +112,7 @@ if($houdini_qty>0)
     
     echo '<p> Houdini </p>
     <img src="images/houdini.jpg" alt="Very fluffy small black and white chicken" height="50">';
-    echo 'Total :' . $houdini_qty . '<br>';
+    echo '<p>Total :' . $houdini_qty . '</p><br>';
 }
 
 if($roxi_qty>0)
@@ -120,7 +120,7 @@ if($roxi_qty>0)
     
     echo '<p> Roxi </p>
     <img src="images/roxi.jpg" alt="Very fluffy small black and white chicken" height="50">';
-    echo 'Total :' . $roxi_qty . '<br>';
+    echo '<p>Total :' . $roxi_qty . '</p><br>';
 }
 ?>
 
