@@ -54,7 +54,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $city = test_input($_POST["City"]);
     $state = test_input($_POST["State"]);
     $zip = test_input($_POST["Zip"]);
-    array_push($_SESSION['customer'],$name, $email, $street, $city, $state, $zip);
   }
   
   function test_input($data) {
@@ -82,9 +81,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <h3> Customer Information </h3>
 <?php
-echo 'Name: ' . $_POST['Name'] . '<br>';
+echo 'Name: ' . $name . '<br>';
 echo 'Email: ' . $email . '<br>';
-
+echo 'Street: ' . $street . '<br>';
+echo 'City: ' . $city . '<br>';
+echo 'State: ' . $state . '<br>';
+echo 'Zip Code: ' . $zip . '<br>';
 ?>
 
 <h3> Order Information </h3>

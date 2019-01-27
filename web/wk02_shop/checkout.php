@@ -4,26 +4,7 @@ print_r($_SESSION);
 echo "Check Out";
 if(isset($_SESSION['userName'])){
 }
-$_SESSION['customer']=array();
-$name = $email = $street = $city = $state = $zip = "";
 
-/* if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = test_input($_POST["name"]);
-    $email = test_input($_POST["email"]);
-    $street = test_input($_POST["street"]);
-    $city = test_input($_POST["city"]);
-    $state = test_input($_POST["state"]);
-    $zip = test_input($_POST["zip"]);
-    array_push($_SESSION['customer'], $name, $email, $street, $city, $state, $zip);
-    // header("location:orderConfirmation.php");
-  }
-  
-  function test_input($data) {
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-  } */
 
 ?>
 
