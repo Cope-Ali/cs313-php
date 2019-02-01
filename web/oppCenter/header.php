@@ -13,7 +13,6 @@ header {
     background-color: #1A8FB0;
     Font-family: serif;
     color: white;
-    padding: 25px;
     text-align: center;
     margin: auto;
 }
