@@ -24,10 +24,9 @@ h1 {
 }
 
 img {
-    float: left;
-    margin-left:20px;
-    margin-top: -200;
-
+    position: fixed;
+    top: 20px;
+    left: 20px;
 }
 
 h2 {
