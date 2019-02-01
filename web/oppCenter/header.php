@@ -14,7 +14,8 @@ header {
     Font-family: serif;
     color: white;
     text-align: center;
-    margin: auto;
+    padding-top: 25px;
+    padding-bottom: 25px;
 }
 
 h1 {
