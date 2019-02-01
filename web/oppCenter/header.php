@@ -25,6 +25,7 @@ h1 {
 img {
     float: left;
     margin-left:20px;
+    margin-right:-20px;
 }
 
 h2 {
