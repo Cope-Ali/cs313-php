@@ -20,18 +20,17 @@ header {
 }
 
 h1 {
-    font-family: 'Poppins', sans-serif;
-    margin-right:-20px;    
+    font-family: 'Poppins', sans-serif;  
 }
 
 img {
     float: left;
     margin-left:20px;
+    margin-top: -200;
 
 }
 
 h2 {
     font-family: 'Open Sans', sans-serif;
-    margin-right:-20px;
 }
 </style>
