@@ -16,7 +16,7 @@ header {
     color: white;
     text-align: center;
     padding-top: 20px;
-    padding bottom: 40px;
+    padding bottom: 60px;
 }
 
 h1 {
