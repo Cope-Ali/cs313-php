@@ -1,7 +1,7 @@
 <header>
 <img src="img/logo.jpg" alt="logo for Chruch of Jesus Christ of Latter-day Saints">
-<h2>Anderson California Stake</h2>
 <h1> Opportunity Center </h1>
+<h3>Anderson California Stake</h3>
 
 </header>
 
