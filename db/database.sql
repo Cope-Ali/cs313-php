@@ -47,8 +47,15 @@ CREATE TABLE progress (
     progress_id             serial      PRIMARY KEY,
     progress_person         INT         REFERENCES person(person_id),
     progress_opportunity    INT         REFERENCES opportunity(opportunity_id),
-    progress_status         VARCHAR(20) NOT NULL,
-    progress_notes          varchar(500)
+    progress_status         VARCHAR(20) NOT NULL
+);
+
+--create notes table--
+CREATE TABLE notes (
+    notes_id                serial      PRIMARY KEY,
+    notes_progress          INT         REFERENCES progress(progress_id),
+    notes_person            INT         REFERENCES person(person_id),
+    notes_leader            INT         REFERENCES leader(leader_id)
 );
 
 --inset ward names --
