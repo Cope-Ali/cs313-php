@@ -39,14 +39,24 @@ catch (PDOException $ex)
 
 <div class="container" >
 
-<?php
-foreach ($db->query('SELECT * FROM scriptures') as $row)
-{
-  echo "<strong>" . $row['scriptures_book'] . " " . $row['scriptures_chapter'] . ":" . $row['scriptures_verse'] . " - </strong>";
-  echo "\"" . $row['scriptures_content'] . "\"";
-  echo '<br/>';
-}
 
+<form action="home.php" method="post">
+
+Book: <input type="text" name="book">
+<input type="submit" name="submit" value="Submit">
+</form>
+
+
+<?php
+if($_POST['book'] != "")
+{
+    foreach ($db->query('SELECT * FROM scriptures WHERE scriptures_book =' . $_POST['book']) as $row)
+    {
+    echo "<strong>" . $row['scriptures_book'] . " " . $row['scriptures_chapter'] . ":" . $row['scriptures_verse'] . " - </strong>";
+    echo "\"" . $row['scriptures_content'] . "\"";
+    echo '<br/>';
+    }
+}
 
 ?>
 
