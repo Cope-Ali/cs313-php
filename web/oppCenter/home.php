@@ -42,10 +42,8 @@ catch (PDOException $ex)
 <?php
 foreach ($db->query('SELECT * FROM scriptures') as $row)
 {
-  echo 'book: ' . $row['scriptures_book'];
-  echo 'chapter: ' . $row['scriptures_chapter'];
-  echo 'verse: ' . $row['scriptures_verse'];
-  echo 'content: ' . $row['scriptures_content'];
+  echo "<strong>" $row['scriptures_book'] . " " . $row['scriptures_chapter'] . ":" . $row['scriptures_verse'] . " - </strong>";
+  echo "\"" . $row['scriptures_content'] . "\"";
   echo '<br/>';
 }
 
