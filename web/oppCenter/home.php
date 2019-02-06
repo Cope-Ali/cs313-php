@@ -40,7 +40,7 @@ catch (PDOException $ex)
 <div class="container" >
 
 
-<form action="home.php" method="post">
+<form action="" method="post">
 
 Book: <input type="text" name="book">
 <input type="submit" name="submit" value="Submit">
@@ -50,7 +50,7 @@ Book: <input type="text" name="book">
 <?php
 if($_POST['book'] != "")
 {
-    foreach ($db->query('SELECT * FROM scriptures WHERE scriptures_book =' . $_POST['book']) as $row)
+    foreach ($db->query('SELECT * FROM scriptures WHERE scriptures_book =\'' . $_POST['book'] . '\'') as $row)
     {
     echo "<strong>" . $row['scriptures_book'] . " " . $row['scriptures_chapter'] . ":" . $row['scriptures_verse'] . " - </strong>";
     echo "\"" . $row['scriptures_content'] . "\"";
