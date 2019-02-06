@@ -40,12 +40,14 @@ catch (PDOException $ex)
 <div class="container" >
 
 <?php
-$statement = $db->query('SELECT ward FROM wards');
-while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+foreach ($db->query('SELECT * FROM scriptures') as $row)
 {
-  echo 'Ward Name: ' . $row['ward'] . '<br/>';
+  echo 'book: ' . $row['book'];
+  echo 'chapter: ' . $row['chapter'];
+  echo 'verse: ' . $row['verse'];
+  echo 'content: ' . $row['content'];
+  echo '<br/>';
 }
-
 
 
 ?>

@@ -3,23 +3,18 @@ CREATE TABLE wards (
     ward VARCHAR(20) PRIMARY KEY
 );
 
---create Contact Info table --
-CREATE TABLE contact (
-    contact_id serial PRIMARY KEY,
-    contact_street_address VARCHAR(80),
-    contact_city VARCHAR(40),
-    contact_state VARCHAR(2),
-    contact_phone INT,
-    contact_email varchar(40)
-);
 
 --Create Person table--
 CREATE TABLE person (
         person_id           serial          PRIMARY KEY,
         person_ward         varchar(20)     REFERENCES wards(ward) ,
-        person_contact_id   INT             references contact(contact_id),
         person_first        varchar(20)     NOT NULL,
-        person_last         varchar(20)     NOT NULL  
+        person_last         varchar(20)     NOT NULL,
+        person_street_address VARCHAR(80),
+        person_city VARCHAR(40),
+        person_state VARCHAR(2),
+        person_phone INT,
+        person_email varchar(40)  
 );
 
 --Create Callings table--
@@ -84,3 +79,17 @@ VALUES
 ('EQ_second'),
 ('OppCntr');
 
+--Create person
+--Create Person table--
+Insert Into person(
+        person_id,
+        person_ward,
+        person_first,
+        person_last,
+        person_street_address,
+        person_city,
+        person_state,
+        person_phone,
+        person_email)
+VALUES
+;
