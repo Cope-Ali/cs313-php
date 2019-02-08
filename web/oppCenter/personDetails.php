@@ -23,11 +23,11 @@ if($_GET['id'] != "")
 {
     foreach ($db->query('SELECT * FROM person WHERE person_id =\'' . $_GET['id'] . '\'') as $row)
     {
-    echo "<strong>" . $row['person_first'] . " " . $row['person_last'] . "</strong>" . " - Ward: " . $row['person_ward'];
-    echo "Contact Information: <br>" . $row['person_street_address'] . '<br>';
+    echo "<strong>" . $row['person_first'] . " " . $row['person_last'] . "</strong>" . "<br> - Ward: " . $row['person_ward'];
+    echo "<strong> Contact Information: </strong> <br>" . $row['person_street_address'] . '<br>';
     echo $row['person_city'] . ", " . $row['person_state'] . '<br>';
-    echo "Phone " . $row['person_phone'] . '<br>';
-    echo "Email " . $row['person_email'];
+    echo "Phone: " . $row['person_phone'] . '<br>';
+    echo "Email: " . $row['person_email'];
     echo '<br/>';
     }
 
