@@ -21,7 +21,21 @@ include("accessDB.php");
 <?php
 if($_GET['id'] != "")
 {
-    foreach ($db->query('SELECT * FROM person WHERE person_id =\'' . $_GET['id'] . '\'') as $row)
+    foreach ($db->query('SELECT
+    person_ward,         
+    person_first,       
+    person_last,
+    person_street_address, 
+    person_city,
+    person_state,
+    person_phone,
+    person_email,
+    leader_calling,
+    progress_id
+    FROM person 
+    Left JOIN leader on person.person_id = leader.leader_person 
+    Left Join progress on person.person_id = progress.progress_person
+    WHERE person_id =\'' . $_GET['id'] . '\'') as $row)
     {
     echo "<strong>" . $row['person_first'] . " " . $row['person_last'] . "</strong>" . "<br>Ward: " . $row['person_ward'];
     echo "<br><strong> Contact Information: </strong> <br>" . $row['person_street_address'] . '<br>';
@@ -29,19 +43,25 @@ if($_GET['id'] != "")
     echo "Phone: " . $row['person_phone'] . '<br>';
     echo "Email: " . $row['person_email'];
     echo '<br/>';
-    }
-
-    foreach ($db->query('SELECT * FROM leader WHERE leader_person =\'' . $_GET['id'] . '\'') as $row)
-    {
     echo "Calling: " . $row['leader_calling'] . "<br> ";
-    }
 
-    foreach ($db->query('SELECT * FROM progress WHERE progress_person =\'' . $_GET['id'] . '\'') as $row)
+    foreach ($db->query('SELECT
+    opportunity_name,
+    progress_status,
+    notes_date,
+    notes_text,
+    leader_calling,
+    person_first,
+    person_last
+FROM progress
+    Left Join opportunity on progress.progress_opportunity = opportunity.opportunity_id
+    Left Join notes on progress.progress_id = notes.notes_progress
+    Left Join leader on notes.notes_leader = leader.leader_id
+    Left Join person on leader.leader_person = person.person_id
+    WHERE progress_id =\'' . $row['progress_id'] . '\'') as $row)
     {
-    echo "Current Opportunities: " . $row['progress_opportunity'] . " Status: " . $row['progress_status'] . '<br>';
-        foreach ($db->query('SELECT * FROM notes WHERE notes_progress =\'' . $row['progress_id'] . '\'') as $row)
-        {
-        echo "Note By: " . $row['notes_leader'] . "<br> Date: " . $row['notes_date'] . '<br>';
+    echo "Current Opportunities: " . $row['opportunity_name'] . " Status: " . $row['progress_status'] . '<br>';
+    echo "Note By: " . $row['person_first'] . " " . $row['person_last'] . ", " . $row['leader_calling'] . "<br> Date: " . $row['notes_date'] . '<br>';
         echo "Note Text: <br>" . $row['notes_text'];
         }
     echo '<br/>';
