@@ -4,6 +4,7 @@ body{
     font-family: 'Open Sans', sans-serif;
     line-height: 1.5em;
     margin: auto;
+    width: 80%;
 }
 
 #content-container{

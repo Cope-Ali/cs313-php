@@ -52,7 +52,7 @@ CREATE TABLE notes (
     notes_person            INT         REFERENCES person(person_id),
     notes_leader            INT         REFERENCES leader(leader_id),
     notes_text              VarChar(1000) NOT NULL,
-    notes_date              DATE
+    notes_date              DATE DEFAULT CURRENT_DATE
 );
 
 --inset ward names --
@@ -105,5 +105,70 @@ VALUES
 ('PaloCedro', 'Peter', 'Parker', '789 Spider Dr', 'Palo Cedro', 'CA', '5307665566', 'spiderman@company.com'),
 ('PaloCedro', 'Pauline', 'Hale', '7745 Rainbow Dr', 'Palo Cedro', 'CA', '5301259845', 'ph@company.com'),
 ('RedBluff', 'Steve', 'Adams', '84 Cricket', 'Red Bluff', 'CA', '5305305530', 'adamsFamily@company.com'),
-('RedBluff', 'Sarah', 'Little', '2258 Mouse Track Trail', 'Red Bluff', 'CA', '5307565401', 'sarah@company.com')
+('RedBluff', 'Sarah', 'Little', '2258 Mouse Track Trail', 'Red Bluff', 'CA', '5307565401', 'sarah@company.com');
+
+--Create Leader Data--
+Insert Into Leader(
+    leader_person,
+    leader_ward,            
+    leader_calling        
+)
+VALUES
+('1','Anderson','Bishop'),
+('3','Antelope','B_frst'),
+('6','Cottonwood','B_second'),
+('8','Corning','RS_pres'),
+('9','FallRiver','RS_first'),
+('10','FallRiver','RS_second'),
+('2','Anderson','EQ_pres'),
+('12','PaloCedro','EQ_first'),
+('13','RedBluff','EQ_second'),
+('14','RedBluff','OppCntr');
+
+--Create Opportunity Data--
+Insert Into opportunity(
+opportunity_name, 
+opportunity_mentor
+)
+VALUES
+('Resume Building', '2'),
+('Budgeting', '1'),
+('Parenting', '3'),
+('Computer Skills', '10'),
+('Education', '13');
+
+--Create Progress Data--
+Insert Into progress (
+    progress_person,         
+    progress_opportunity,    
+    progress_status         
+)
+VALUES
+('7','1','pending'),
+('5','2','in progress'),
+('9','3','completed'),
+('1','4','in progress'),
+('3','4','complete'),
+('11','1','in progress'),
+('13','5','complete')
 ;
+
+--create notes data--
+Insert Into notes (
+    notes_progress,
+    notes_person,
+    notes_leader,
+    notes_text             
+)
+VALUES
+('1','7','2','notes go here'),
+('1','7','3','second set of notes'),
+('2','5','1','notes go here'),
+('3','9','4','notes go here'),
+('4','1','9','notes go here'),
+('5','3','1','notes go here'),
+('6','11','1','notes go here'),
+('7','13','2','notes go here'),
+('3','9','2',' more notes go here'),
+('4','1','3','more notes go here');
+
