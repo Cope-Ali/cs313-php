@@ -43,7 +43,7 @@ if($_GET['id'] != "")
     echo "Phone: " . $row['person_phone'] . '<br>';
     echo "Email: " . $row['person_email'];
     echo '<br/>';
-    echo "Calling: " . $row['leader_calling'] . "<br> ";
+    echo "Calling: " . $row['leader_calling'] . "<br> <hr>";
 
     foreach ($db->query('SELECT
     opportunity_name,
@@ -60,9 +60,9 @@ FROM progress
     Left Join person on leader.leader_person = person.person_id
     WHERE progress_id =\'' . $row['progress_id'] . '\'') as $row)
     {
-    echo "Current Opportunities: " . $row['opportunity_name'] . " Status: " . $row['progress_status'] . '<br>';
+    echo "Current Opportunities: " . $row['opportunity_name'] . "<br> Status: " . $row['progress_status'] . '<br>';
     echo "Note By: " . $row['person_first'] . " " . $row['person_last'] . ", " . $row['leader_calling'] . "<br> Date: " . $row['notes_date'] . '<br>';
-        echo "Note Text: <br>" . $row['notes_text'];
+        echo "Note Text: <br>" . $row['notes_text'] . "<br><hr>";
         }
     echo '<br/>';
     }
