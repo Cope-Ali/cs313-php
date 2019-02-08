@@ -22,14 +22,14 @@ include("accessDB.php");
 
 <form action="" method="post">
 <h2>Search By:</h2>
-Ward: <input type="text" name="ward" default="Ward"> <br>
+Ward: <input type="text" name="ward"> <br>
 Last Name: <input type="text" name = "last_name"> <br>
 <input type="submit" name="submit" value="Submit">
 </form>
 
 
 <?php
-if($_POST['ward'] != "Ward")
+if($_POST['ward'] != null)
 {
     foreach ($db->query('SELECT * FROM person WHERE person_ward =\'' . $_POST['ward'] . '\'') as $row)
     {
