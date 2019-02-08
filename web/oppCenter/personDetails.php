@@ -41,8 +41,8 @@ if($_GET['id'] != "")
     echo "Current Opportunities: " . $row['progress_opportunity'] . " Status: " . $row['progress_status'] . '<br>';
         foreach ($db->query('SELECT * FROM notes WHERE notes_progress =\'' . $row['progress_id'] . '\'') as $row)
         {
-        echo "Note By: " . $row['notes_leader'] . " Date: " . $row['notes_date'] . '<br>';
-        echo "Note Text: " . $row['notes_text'];
+        echo "Note By: " . $row['notes_leader'] . "<br> Date: " . $row['notes_date'] . '<br>';
+        echo "Note Text: <br>" . $row['notes_text'];
         }
     echo '<br/>';
     }
