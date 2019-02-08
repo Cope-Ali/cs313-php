@@ -21,19 +21,30 @@ include("accessDB.php");
 
 
 <form action="" method="post">
-
-Book: <input type="text" name="book">
+<h2>Search By:</h2>
+Ward: <input type="text" name="ward"> <br>
+Last Name: <input type="text" name = "last_name"> <br>
 <input type="submit" name="submit" value="Submit">
 </form>
 
 
 <?php
-if($_POST['book'] != "")
+if($_POST['ward'] != "")
 {
-    foreach ($db->query('SELECT * FROM scriptures WHERE scriptures_book =\'' . $_POST['book'] . '\'') as $row)
+    foreach ($db->query('SELECT * FROM person WHERE person_ward =\'' . $_POST['ward'] . '\'') as $row)
     {
-    echo "<strong>" . $row['scriptures_book'] . " " . $row['scriptures_chapter'] . ":" . $row['scriptures_verse'] . " - </strong>";
-    echo "<a href='scriptureDetails.php?id=". $row['scriptures_id'] . "'> 'Scripture Details' </a>";
+    echo "<strong>" . $row['person_first'] . " " . $row['person_last'] . "</strong>";
+    echo "<a href='personDetails.php?id=". $row['person_id'] . "'> 'Person Details' </a>";
+    echo '<br/>';
+    }
+}
+
+if($_POST['last_name'] != "" )
+{
+    foreach ($db->query('SELECT * FROM person WHERE person_last =\'' . $_POST['person_last'] . '\'') as $row)
+    {
+    echo "<strong>" . $row['person_first'] . " " . $row['person_last'] . "</strong>" . " - Ward: " . $row['person_ward'];
+    echo "<a href='personDetails.php?id=". $row['person_id'] . "'> 'Person Details' </a>";
     echo '<br/>';
     }
 }
