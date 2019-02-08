@@ -33,7 +33,7 @@ if($_POST['ward'] != "")
 {
     foreach ($db->query('SELECT * FROM person WHERE person_ward =\'' . $_POST['ward'] . '\'') as $row)
     {
-    echo "<strong>" . $row['person_first'] . " " . $row['person_last'] . "</strong>";
+    echo "<strong>" . $row['person_first'] . " " . $row['person_last'] . "</strong>" . $row['person_ward'];
     echo "<a href='personDetails.php?id=". $row['person_id'] . "'> 'Person Details' </a>";
     echo '<br/>';
     }
