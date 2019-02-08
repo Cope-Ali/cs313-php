@@ -38,8 +38,7 @@ if($_GET['id'] != "")
 
     foreach ($db->query('SELECT * FROM progress WHERE progress_person =\'' . $_GET['id'] . '\'') as $row)
     {
-    echo "Current Opportunities: <br>" . ($db->query('SELECT * FROM opportunities WHERE opportunity_id=\'' . $row['progress_opportunity'] . '\'') as $row)
-    echo "<br> Status: " . $row['progress_status'] . '<br>';
+    echo "Current Opportunities: " . $row['progress_opportunity'] . " Status: " . $row['progress_status'] . '<br>';
         foreach ($db->query('SELECT * FROM notes WHERE notes_progress =\'' . $row['progress_id'] . '\'') as $row)
         {
         echo "Note By: " . $row['notes_leader'] . " Date: " . $row['notes_date'] . '<br>';
