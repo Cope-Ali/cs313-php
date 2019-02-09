@@ -6,7 +6,7 @@
     text-align: center;
 }
 
-a {
+a .nav{
     color: white;
     padding: 40px;
 }
