@@ -6,7 +6,10 @@
     text-align: center;
 }
 
-
+a {
+    color: white;
+    padding: 40px;
+}
 
 </style>
 
