@@ -9,8 +9,8 @@
 
 </style>
 
-<div id="nav" style="color:white; padding:40px;">
-  <a style="color:white; padding-right:40px;" href="/home.php">Home</a>
-  <a style="color:white; padding-left:40px;" href="/newForm.php">Add New</a>
+<div id="nav">
+  <a style="color:white; padding-right:40px;" href="home.php">Home</a>
+  <a style="color:white; padding-left:40px;" href="newForm.php">Add New</a>
 </div>
 
