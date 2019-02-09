@@ -6,14 +6,10 @@
     text-align: center;
 }
 
-a#nav{
-    color: white;
-    padding: 40px;
-}
 
 </style>
 
-<div id="nav">
+<div id="nav" style="color:white; padding:40px;">
   <a href="/home.php">Home</a>
   <a href="/newForm.php">Add New</a>
 </div>
