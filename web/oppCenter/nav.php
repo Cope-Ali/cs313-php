@@ -10,7 +10,7 @@
 </style>
 
 <div id="nav" style="color:white; padding:40px;">
-  <a href="/home.php">Home</a>
-  <a href="/newForm.php">Add New</a>
+  <a style="color:white; padding:40px;" href="/home.php">Home</a>
+  <a style="color:white; padding:40px;" href="/newForm.php">Add New</a>
 </div>
 
