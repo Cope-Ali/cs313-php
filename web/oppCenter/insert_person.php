@@ -14,7 +14,16 @@ $email = htmlspecialchars($_POST['email']);
 $calling = htmlspecialchars($_POST['calling']);
 $opps = htmlspecialchars($_POST['op_box']);
 
-echo $opps;
+if (!empty($opps))
+{
+    $N= count($opps);
+    echo "you selected " . $N;
+    for ($i=0: $i <$N; $i++)
+    {
+        echo $opps[$i] . " <br>";
+    }
+}
+
 //insert new person into person table
 $stmt = $db->prepare('INSERT INTO person(
     person_ward,
