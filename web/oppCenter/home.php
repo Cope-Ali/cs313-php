@@ -28,6 +28,7 @@ $wards = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <form action="" method="post">
 <h2>Search By:</h2>
 Ward: <select name='ward'>
+<option value='default'> Select Ward </option>
 <?php
 foreach ($wards as $ward)
 {
