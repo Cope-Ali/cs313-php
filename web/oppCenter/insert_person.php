@@ -18,7 +18,7 @@ if (!empty($opps))
 {
     $N= count($opps);
     echo "you selected " . $N;
-    for ($i=0: $i <$N; $i++)
+    for ($i=0; $i <$N; $i++)
     {
         echo $opps[$i] . " <br>";
     }
