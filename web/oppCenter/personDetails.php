@@ -87,33 +87,34 @@ $person_rows = $stmt1->fetchAll(PDO::FETCH_ASSOC);
         $status = $or['progress_status'];
         $notes_id = $or['notes_id'];
 
-        echo "Current Opportunities: " . $row['opportunity_name'] . "<br> Status: " . $row['progress_status'] . $row['progress_id'] . '<br>';
+        echo "Current Opportunities: " . $op_name . "<br> Status: " . $status . $row['progress_id'] . '<br>';
     
-    }
+    
 
-    $stmt3 = $db->prepare('SELECT 
-    notes_date,
-    notes_text,
-    leader_calling,
-    person_first,
-    person_last
-    from notes 
-    Left Join leader on notes.notes_leader = leader.leader_id
-    Left Join person on leader.leader_person = person.person_id
-    WHERE notes_id =:id');
-    $stmt3->bindValue(':id', $notes_id, PDO::PARAM_INT);
-    $stmt3->execute();
-    $notes_rows = $stmt3->fetchAll(PDO::FETCH_ASSOC);
+        $stmt3 = $db->prepare('SELECT 
+        notes_date,
+        notes_text,
+        leader_calling,
+        person_first,
+        person_last
+        from notes 
+        Left Join leader on notes.notes_leader = leader.leader_id
+        Left Join person on leader.leader_person = person.person_id
+        WHERE notes_id =:id');
+        $stmt3->bindValue(':id', $notes_id, PDO::PARAM_INT);
+        $stmt3->execute();
+        $notes_rows = $stmt3->fetchAll(PDO::FETCH_ASSOC);
 
-    foreach ($notes_rows as $nr)
-    {
-        $notes_by = $nr['person_first'] . " " . $nr['person_last'] . " - " . $nr['leader_calling'];
-        $date = $nr['notes_date'];
-        $content = $nr['notes_text'];
+        foreach ($notes_rows as $nr)
+        {
+            $notes_by = $nr['person_first'] . " " . $nr['person_last'] . " - " . $nr['leader_calling'];
+            $date = $nr['notes_date'];
+            $content = $nr['notes_text'];
 
-        echo "Note By: " . $notes_by . "<br>";
-        echo "Date: " . $date . '<br>';
-        echo "Note Text: <br>" . $content . "<br><hr>";
+            echo "Note By: " . $notes_by . "<br>";
+            echo "Date: " . $date . '<br>';
+            echo "Note Text: <br>" . $content . "<br><hr>";
+        }
     }
 
 ?>
