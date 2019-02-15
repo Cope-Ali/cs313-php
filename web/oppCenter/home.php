@@ -39,7 +39,7 @@ Ward: <select name='ward'>
 <?php
 foreach ($wards as $ward)
 {
-echo "<option value='$ward'> $ward </option>" 
+echo "<option value='$ward'> $ward </option>" ;
 }
 ?></select><br>
 Last Name: <input type="text" name = "last_name"> <br>
