@@ -1,9 +1,12 @@
 <?php
+session_start();
+include("accessDB.php");
 
 $person_id = htmlspecialchars($_POST['person_id']);
 $progress_id = htmlspecialchars($_POST['progress_id']);
 $leader_id = htmlspecialchars($_POST['leader_id']);
 $text = htmlspecialchars($_POST['note_text']);
+
 
 $stmt = $db->prepare('INSERT INTO notes(
     notes_progress,
