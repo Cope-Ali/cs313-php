@@ -46,6 +46,7 @@ if($_GET['id'] != "")
     echo "Calling: " . $row['leader_calling'] . "<br> <hr>";
 
     foreach ($db->query('SELECT
+    progress_id,
         opportunity_name,
         progress_status,
         notes_id
