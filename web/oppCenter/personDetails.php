@@ -57,7 +57,7 @@ $person_rows = $stmt1->fetchAll(PDO::FETCH_ASSOC);
 
         echo "<strong>" . $first . " " . $last . "</strong>" . "<br>Ward: " .  $ward;
         echo "<br><strong> Contact Information: </strong> <br>" . $street . '<br>';
-        echo $city_state'<br>';
+        echo $city_state . '<br>';
         echo "Phone: " . $phone . '<br>';
         echo "Email: " . $email;
         echo '<br/>';
