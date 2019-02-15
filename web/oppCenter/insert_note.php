@@ -16,7 +16,6 @@ $stmt->bindValue(':person_id', $person_id, PDO::PARAM_INT);
 $stmt->bindValue(':leader_id', $leader_id, PDO::PARAM_INT);
 $stmt->bindValue(':content', $text, PDO::PARAM_STR);
 $stmt->execute();
-$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $new_page ="personDetails.php?id=$person_id";
 header("Location: $new_page");
