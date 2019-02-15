@@ -71,7 +71,6 @@ $person_rows = $stmt1->fetchAll(PDO::FETCH_ASSOC);
     progress_status
     FROM progress
     Left Join opportunity on progress.progress_opportunity = opportunity.opportunity_id
-    Left Join notes on progress.progress_id = notes.notes_progress
     WHERE progress_id =:id');
     $stmt2->bindValue(':id', $prog_id, PDO::PARAM_INT);
     $stmt2->execute();
@@ -84,12 +83,9 @@ $person_rows = $stmt1->fetchAll(PDO::FETCH_ASSOC);
     {
         $op_name = $or['opportunity_name'];
         $status = $or['progress_status'];
-        $notes_id = $or['notes_id'];
 
-        echo "Current Opportunities: " . $op_name . "<br> Status: " . $status . $row['progress_id'] . '<br>';
-    
+        echo "Current Opportunities: " . $op_name . "<br> Status: " . $status . '<br>';
     }
-
         $stmt3 = $db->prepare('SELECT 
         notes_date,
         notes_text,
@@ -110,9 +106,9 @@ $person_rows = $stmt1->fetchAll(PDO::FETCH_ASSOC);
             $date = $nr['notes_date'];
             $content = $nr['notes_text'];
 
-            echo "Note By: " . $notes_by . "<br>";
+            echo "<hr> Note By: " . $notes_by . "<br>";
             echo "Date: " . $date . '<br>';
-            echo "Note Text: <br>" . $content . "<br><hr>";
+            echo "Note Text: <br>" . $content . "<br>";
         }
     
 
