@@ -47,23 +47,25 @@ if($_GET['id'] != "")
 
     foreach ($db->query('SELECT
         opportunity_name,
-        progress_status
+        progress_status,
+        notes_id
         FROM progress
         Left Join opportunity on progress.progress_opportunity = opportunity.opportunity_id
+        Left Join notes on progress.progress_id = notes.notes_progress
         WHERE progress_id =\'' . $row['progress_id'] . '\'') as $row)
         {
             echo "Current Opportunities: " . $row['opportunity_name'] . "<br> Status: " . $row['progress_status'] . '<br>';
         
-            foreach($db->query('SELECT notes_date,
+            foreach($db->query('SELECT 
+                notes_date,
                 notes_text,
                 leader_calling,
                 person_first,
                 person_last
                 from notes 
-                Left Join progress on notes.notes_progress = progress.progress_id
                 Left Join leader on notes.notes_leader = leader.leader_id
                 Left Join person on leader.leader_person = person.person_id
-                WHERE progress_id =\'' . $row['progress_id'] . '\'') as $row)
+                WHERE notes_id =\'' . $row['notes_id'] . '\'') as $row)
                 {
                     echo "Note By: " . $row['person_first'] . " " . $row['person_last'] . ", " . $row['leader_calling'] . "<br> Date: " . $row['notes_date'] . '<br>';
                     echo "Note Text: <br>" . $row['notes_text'] . "<br><hr>";
