@@ -46,27 +46,31 @@ if($_GET['id'] != "")
     echo "Calling: " . $row['leader_calling'] . "<br> <hr>";
 
     foreach ($db->query('SELECT
-    opportunity_name,
-    progress_status,
-    notes_date,
-    notes_text,
-    leader_calling,
-    person_first,
-    person_last
-FROM progress
-    Left Join opportunity on progress.progress_opportunity = opportunity.opportunity_id
-    Left Join notes on progress.progress_id = notes.notes_progress
-    Left Join leader on notes.notes_leader = leader.leader_id
-    Left Join person on leader.leader_person = person.person_id
-    WHERE progress_id =\'' . $row['progress_id'] . '\'') as $row)
-    {
-    echo "Current Opportunities: " . $row['opportunity_name'] . "<br> Status: " . $row['progress_status'] . '<br>';
-    echo "Note By: " . $row['person_first'] . " " . $row['person_last'] . ", " . $row['leader_calling'] . "<br> Date: " . $row['notes_date'] . '<br>';
-        echo "Note Text: <br>" . $row['notes_text'] . "<br><hr>";
+        opportunity_name,
+        progress_status
+        FROM progress
+        Left Join opportunity on progress.progress_opportunity = opportunity.opportunity_id
+        WHERE progress_id =\'' . $row['progress_id'] . '\'') as $row)
+        {
+            echo "Current Opportunities: " . $row['opportunity_name'] . "<br> Status: " . $row['progress_status'] . '<br>';
+        
+            foreach($db->query('SELECT notes_date,
+                notes_text,
+                leader_calling,
+                person_first,
+                person_last
+                from notes 
+                Left Join progress on notes.notes_progress = progress.progress_id
+                Left Join leader on notes.notes_leader = leader.leader_id
+                Left Join person on leader.leader_person = person.person_id
+                WHERE progress_id =\'' . $row['progress_id'] . '\'') as $row)
+                {
+                    echo "Note By: " . $row['person_first'] . " " . $row['person_last'] . ", " . $row['leader_calling'] . "<br> Date: " . $row['notes_date'] . '<br>';
+                    echo "Note Text: <br>" . $row['notes_text'] . "<br><hr>";
+                }
+            echo '<br/>';
         }
-    echo '<br/>';
     }
-
 }
 
 ?>
