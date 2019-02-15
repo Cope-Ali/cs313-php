@@ -54,7 +54,7 @@ if($_GET['id'] != "")
         Left Join notes on progress.progress_id = notes.notes_progress
         WHERE progress_id =\'' . $row['progress_id'] . '\'') as $row)
         {
-            echo "Current Opportunities: " . $row['opportunity_name'] . "<br> Status: " . $row['progress_status'] . '<br>';
+            echo "Current Opportunities: " . $row['opportunity_name'] . "<br> Status: " . $row['progress_status'] .$row['progress_id'] . '<br>';
         
             foreach($db->query('SELECT 
                 notes_date,
