@@ -13,7 +13,7 @@ $stmt2 = $db->prepare($query2);
 $stmt2->execute();
 $callings = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
-$query3 = 'select opportunity_id, opportunity_name From opportunities';
+$query3 = 'select opportunity_id, opportunity_name From opportunity';
 $stmt3 = $db->prepare($query3);
 $stmt3->execute();
 $opportunities = $stmt3->fetchAll(PDO::FETCH_ASSOC);
@@ -49,8 +49,8 @@ Last Name: <input type="text" name = "last_name"> <br>
 Street Address: <input type="text" name = "street_address"> <br>
 City: <input type="text" name = "city"> <br>
 State Abbreviation <input type="text" name = "state"> <br>
-Phone: <input type="text" name = "last_name"> <br>
-Email: <input type="text" name = "last_name"> <br>
+Phone: <input type="text" name = "phone"> <br>
+Email: <input type="text" name = "email"> <br>
 Leadership Calling:  <select name='calling'>
 <option value='default'> None </option>
 <?php

@@ -2,14 +2,15 @@
 session_start();
 include("accessDB.php");
 
-$ward = htmlspecialchars($_POST['person_id']);
-$first = htmlspecialchars($_POST['progress_id']);
-$last = htmlspecialchars($_POST['leader_id']);
-$address = htmlspecialchars($_POST['note_text']);
-$city = htmlspecialchars($_POST['person_id']);
-$state = htmlspecialchars($_POST['progress_id']);
-$phone = htmlspecialchars($_POST['leader_id']);
-$email = htmlspecialchars($_POST['note_text']);
+$ward = htmlspecialchars($_POST['ward']);
+$first = htmlspecialchars($_POST['first_name']);
+$last = htmlspecialchars($_POST['last_name']);
+$address = htmlspecialchars($_POST['street_address']);
+$city = htmlspecialchars($_POST['city']);
+$state = htmlspecialchars($_POST['state']);
+$phone = htmlspecialchars($_POST['phone']);
+$email = htmlspecialchars($_POST['email']);
+$calling = htmlspecialchars($_POST['calling']);
 
 
 $stmt = $db->prepare('INSERT INTO notes(
