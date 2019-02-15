@@ -36,6 +36,7 @@ foreach ($wards as $ward)
 echo "<option value='$ward_name'> $ward_name </option>" ;
 }
 ?></select><br>
+<strong>OR</strong> <br>
 Last Name: <input type="text" name = "last_name"> <br>
 <input type="submit" name="submit" value="Submit">
 </form>
