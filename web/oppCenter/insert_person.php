@@ -14,6 +14,7 @@ $email = htmlspecialchars($_POST['email']);
 $calling = htmlspecialchars($_POST['calling']);
 $opps = htmlspecialchars($_POST['op_box']);
 
+echo $opps;
 //insert new person into person table
 $stmt = $db->prepare('INSERT INTO person(
     person_ward,
@@ -56,7 +57,7 @@ if ($leader != "")
     $stmt2->execute();
 }
 
-if(!empty($opps))
+if(!empty($_POST['op_box']))
 {
     $query3 = 'select opportunity_id From opportunity';
     $stmt3 = $db->prepare($query3);
@@ -89,7 +90,7 @@ if(!empty($opps))
     }
 }
 
-$new_page ="personDetails.php?ward=$ward";
-header("Location: $new_page");
-die();
+//$new_page ="personDetails.php?id=$newId";
+//header("Location: $new_page");
+//die();
 ?>
