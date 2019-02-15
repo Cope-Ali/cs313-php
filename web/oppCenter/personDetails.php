@@ -84,47 +84,46 @@ $person_rows = $stmt1->fetchAll(PDO::FETCH_ASSOC);
         $op_name = $or['opportunity_name'];
         $status = $or['progress_status'];
 
-        echo "Current Opportunities: " . $op_name . "<br> Status: " . $status . '<br>';
+        echo "<strong>Current Opportunities: " . $op_name . "<br> Status: " . $status . '</strong><br>';
     }
-        $stmt3 = $db->prepare('SELECT 
-        notes_date,
-        notes_text,
-        leader_calling,
-        person_first,
-        person_last
-        from notes 
-        Left Join leader on notes.notes_leader = leader.leader_id
-        Left Join person on leader.leader_person = person.person_id
-        WHERE notes_progress =:id');
-        $stmt3->bindValue(':id', $prog_id, PDO::PARAM_INT);
-        $stmt3->execute();
-        $notes_rows = $stmt3->fetchAll(PDO::FETCH_ASSOC);
 
-        foreach ($notes_rows as $nr)
-        {
-            $notes_by = $nr['person_first'] . " " . $nr['person_last'] . " - " . $nr['leader_calling'];
-            $date = $nr['notes_date'];
-            $content = $nr['notes_text'];
+    $stmt3 = $db->prepare('SELECT 
+    notes_date,
+    notes_text,
+    leader_calling,
+    person_first,
+    person_last
+    from notes 
+    Left Join leader on notes.notes_leader = leader.leader_id
+    Left Join person on leader.leader_person = person.person_id
+    WHERE notes_progress =:id');
+    $stmt3->bindValue(':id', $prog_id, PDO::PARAM_INT);
+    $stmt3->execute();
+    $notes_rows = $stmt3->fetchAll(PDO::FETCH_ASSOC);
 
-            echo "<hr> Note By: " . $notes_by . "<br>";
-            echo "Date: " . $date . '<br>';
-            echo "Note Text: <br>" . $content . "<br>";
+    foreach ($notes_rows as $nr)
+    {
+        $notes_by = $nr['person_first'] . " " . $nr['person_last'] . " - " . $nr['leader_calling'];
+        $date = $nr['notes_date'];
+        $content = $nr['notes_text'];
 
-            echo "<form method='post' action='insert_note.php'>";
-            echo "<input type='hidden' name='progress_id' value =\'" . $prog_id . "\'";
-            echo "<input type='hidden' name='person_id' value =\'" . $id . "\'";
-            echo "<input type='hidden' name='leader_id' value ='1'";
-            echo "<textarea name='note_text'></textarea>";
-            echo "<input type='submit' value = 'Create Note'>";
-            echo "</form>";
-        }
+        echo "<hr> Note By: " . $notes_by . "<br>";
+        echo "Date: " . $date . '<br>';
+        echo "Note Text: <br>" . $content . "<br>";
+    }
+
+    echo "<hr> <strong>Add a New Note: </strong>" 
+    echo "<form method='post' action='insert_note.php'>";
+    echo "<input type='hidden' name='progress_id' value =\'" . $prog_id . "\'>";
+    echo "<input type='hidden' name='person_id' value =\'" . $id . "\'>";
+    echo "<input type='hidden' name='leader_id' value ='1'>";
+    echo "<textarea name='note_text'></textarea>";
+    echo "<input type='submit' value = 'Create Note'>";
+    echo "</form>";
+        
     
 
 ?>
-<form method="post" action="insert_note.php">
-<textarea name="note_text"></textarea>
-<input type="submit" value = "Create Note">
-    </form>
 </div>
 
 <?php include("footer.php");?>
