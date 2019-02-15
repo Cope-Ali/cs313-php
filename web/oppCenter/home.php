@@ -31,7 +31,8 @@ Ward: <select name='ward'>
 <?php
 foreach ($wards as $ward)
 {
-echo "<option value='$ward'> $ward </option>" ;
+    $ward_name = $ward['ward'];
+echo "<option value='$ward_name'> $ward_name </option>" ;
 }
 ?></select><br>
 Last Name: <input type="text" name = "last_name"> <br>
