@@ -6,7 +6,7 @@ body{
     margin: auto;
 }
 
-#container{
+.container{
     margin: auto;    
     padding: 40px;
     width: 80%;
