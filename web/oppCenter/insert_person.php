@@ -36,7 +36,7 @@ $stmt->bindValue(':person_email', $email, PDO::PARAM_STR);
 $stmt->execute();
 
 //get person id for last created person
-$newId = $pdo->lastInsertId('person_id');
+$newId = $db->lastInsertId('person_person_id_seq');
 
 //insert into leadership table if leader option was chosen
 if ($leader != "")
