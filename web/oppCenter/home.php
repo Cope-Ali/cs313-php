@@ -2,15 +2,7 @@
 <?php
 //start session to store credentials
 session_start();
-
-require('accessDB.php');
-
-//select ward From wards;
-$stmt = $db->prepare('SELECT ward FROM wards id=:id AND name=:name');
-$stmt->bindValue(':id', $id, PDO::PARAM_INT);
-$stmt->bindValue(':name', $name, PDO::PARAM_STR);
-$stmt->execute();
-$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+include('accessDB.php');
 
 $query = 'select ward From wards';
 $stmt = $db->prepare($query);
