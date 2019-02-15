@@ -3,7 +3,20 @@
 //start session to store credentials
 session_start();
 
-include("accessDB.php");
+require('accessDB.php');
+
+//select ward From wards;
+$stmt = $db->prepare('SELECT ward FROM wards id=:id AND name=:name');
+$stmt->bindValue(':id', $id, PDO::PARAM_INT);
+$stmt->bindValue(':name', $name, PDO::PARAM_STR);
+$stmt->execute();
+$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$query = 'select ward From wards';
+$stmt = $db->prepare($query);
+$stmt->execute();
+$wards = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +35,13 @@ include("accessDB.php");
 
 <form action="" method="post">
 <h2>Search By:</h2>
-Ward: <input type="text" name="ward"> <br>
+Ward: <select name='ward'>
+<?php
+foreach ($wards as $ward)
+{
+echo "<option value='$ward'> $ward </option>" 
+}
+?></select><br>
 Last Name: <input type="text" name = "last_name"> <br>
 <input type="submit" name="submit" value="Submit">
 </form>
