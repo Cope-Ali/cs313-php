@@ -84,7 +84,7 @@ $person_rows = $stmt1->fetchAll(PDO::FETCH_ASSOC);
         $op_name = $or['opportunity_name'];
         $status = $or['progress_status'];
 
-        echo "<strong>Current Opportunities: " . $op_name . "<br> Status: " . $status . '</strong><br>';
+        echo "<strong>Current Opportunities: " . $op_name . "</strong><br> Status: " . $status . '<br>';
     }
 
     $stmt3 = $db->prepare('SELECT 
@@ -114,8 +114,8 @@ $person_rows = $stmt1->fetchAll(PDO::FETCH_ASSOC);
 
     echo "<hr> <strong>Add a New Note: </strong>" ;
     echo "<form method='post' action='insert_note.php'>";
-    echo "<input type='hidden' name='progress_id' value =\'" . $prog_id . "\'>";
-    echo "<input type='hidden' name='person_id' value =\'" . $id . "\'>";
+    echo "<input type='hidden' name='progress_id' value =" . $prog_id . ">";
+    echo "<input type='hidden' name='person_id' value =" . $id . ">";
     echo "<input type='hidden' name='leader_id' value ='1'>";
     echo "<textarea name='note_text'></textarea>";
     echo "<input type='submit' value = 'Create Note'>";
