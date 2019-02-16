@@ -12,7 +12,7 @@ $state = htmlspecialchars($_POST['state']);
 $phone = htmlspecialchars($_POST['phone']);
 $email = htmlspecialchars($_POST['email']);
 $calling = htmlspecialchars($_POST['calling']);
-// $opp = htmlspecialchars($_POST['opportunity']);
+$opp = htmlspecialchars($_POST['opportunity']);
 
 //insert new person into person table
 $stmt = $db->prepare('INSERT INTO person(
