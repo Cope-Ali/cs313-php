@@ -72,7 +72,6 @@ foreach ($opportunities as $op)
     echo "<option value='$op_id'> $op_name </option>" ;
 }
 ?></select><br> -->
-
 <input type="submit" name="submit" value="Submit">
 </form>
 
