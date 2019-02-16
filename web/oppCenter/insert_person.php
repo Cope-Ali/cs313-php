@@ -12,17 +12,7 @@ $state = htmlspecialchars($_POST['state']);
 $phone = htmlspecialchars($_POST['phone']);
 $email = htmlspecialchars($_POST['email']);
 $calling = htmlspecialchars($_POST['calling']);
-$opps = htmlspecialchars($_POST['op_box']);
-
-if (!empty($opps))
-{
-    $N= count($opps);
-    echo "you selected " . $N;
-    for ($i=0; $i <$N; $i++)
-    {
-        echo $opps[$i] . " <br>";
-    }
-}
+$opp = htmlspecialchars($_POST['opportunity']);
 
 //insert new person into person table
 $stmt = $db->prepare('INSERT INTO person(
@@ -66,40 +56,24 @@ if ($leader != "")
     $stmt2->execute();
 }
 
-if(!empty($_POST['op_box']))
+if ($opp > 0)
 {
-    $query3 = 'select opportunity_id From opportunity';
-    $stmt3 = $db->prepare($query3);
+    $stmt3 = $db->prepare('INSERT Into progress (
+        progress_person,
+        progress_opportunity,
+        progress_status
+    )
+    VALUES (
+        :progress_person,
+        :progress_opportunity,            
+        :progress_status);');
+    $stmt3->bindValue(':progress_person', $newId, PDO::PARAM_INT);
+    $stmt3->bindValue(':progress_opportunity', $opp, PDO::PARAM_INT);
+    $stmt3->bindValue(':progress_status', 'In Progress', PDO::PARAM_STR);
     $stmt3->execute();
-    $opportunities = $stmt3->fetchAll(PDO::FETCH_ASSOC);
-
-    foreach ($opportunities as $op)
-    {
-        $op_id = $op['opportunity_id'];
-        foreach ($opps as $selected)
-        {
-            if($op_id == $selected)
-            {
-                $stmt4 = $db->prepare('INSERT Into Progress (
-                    progress_person,
-                    progress_opportunity,
-                    progress_status
-                )
-                VALUES (
-                    :progress_person,
-                    :progress_opportunity,            
-                    :progress_status);');
-                $stmt4->bindValue(':progress_person', $newId, PDO::PARAM_INT);
-                $stmt4->bindValue(':progress_opportunity', $op_id, PDO::PARAM_INT);
-                $stmt4->bindValue(':progress_status', 'In Progress', PDO::PARAM_STR);
-                $stmt4->execute();  
-            }
-        }
-
-    }
 }
 
-//$new_page ="personDetails.php?id=$newId";
-//header("Location: $new_page");
-//die();
+$new_page ="personDetails.php?id=$newId";
+header("Location: $new_page");
+die();
 ?>

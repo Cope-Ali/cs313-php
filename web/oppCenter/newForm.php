@@ -60,16 +60,17 @@ foreach ($callings as $calling)
 echo "<option value='$calling_name'> $calling_name </option>" ;
 }
 ?></select><br>
-Opportunities: <br>
+Opportunities: <select name='opportunity'>
+<option value='0'> None </option>
 <?php
 foreach ($opportunities as $op)
 {
     $op_name = $op['opportunity_name'];
     $op_id = $op['opportunity_id'];
 
-    echo "<input type='checkbox' name='op_box' value=$op_id> $op_name <br>";
+    echo "<option value='$op_id'> $op_name </option>" ;
 }
-?><br>
+?></select><br>
 
 <input type="submit" name="submit" value="Submit">
 </form>
