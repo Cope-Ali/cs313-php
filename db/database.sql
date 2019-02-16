@@ -79,7 +79,8 @@ VALUES
 ('EQ_pres'),
 ('EQ_first'),
 ('EQ_second'),
-('OppCntr');
+('OppCntr'),
+('Member');
 
 --Create person data
 Insert Into person(

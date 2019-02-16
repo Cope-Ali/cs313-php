@@ -38,9 +38,7 @@ $stmt->execute();
 //get person id for last created person
 $newId = $db->lastInsertId('person_person_id_seq');
 
-//insert into leadership table if leader option was chosen
-if ($leader != "")
-{
+//insert into leadership table
     $stmt2 = $db->prepare('INSERT Into Leader (
         leader_person,
         leader_ward,            
@@ -54,10 +52,8 @@ if ($leader != "")
     $stmt2->bindValue(':leader_ward', $ward, PDO::PARAM_STR);
     $stmt2->bindValue(':leader_calling', $calling, PDO::PARAM_STR);
     $stmt2->execute();
-}
 
-if ($opp > 0)
-{
+
     $stmt3 = $db->prepare('INSERT Into progress (
         progress_person,
         progress_opportunity,
@@ -71,7 +67,6 @@ if ($opp > 0)
     $stmt3->bindValue(':progress_opportunity', $opp, PDO::PARAM_INT);
     $stmt3->bindValue(':progress_status', 'In Progress', PDO::PARAM_STR);
     $stmt3->execute();
-} 
 
 $new_page ="personDetails.php?id=$newId";
 header("Location: $new_page");
