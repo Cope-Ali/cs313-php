@@ -48,7 +48,7 @@ First Name: <input type="text" name = "first_name"> <br>
 Last Name: <input type="text" name = "last_name"> <br>
 Street Address: <input type="text" name = "street_address"> <br>
 City: <input type="text" name = "city"> <br>
-State Abbreviation <input type="text" name = "state"> <br>
+State Abbreviation <input type="text" name = "state" maxlength="2"> <br>
 Phone: <input type="text" name = "phone"> <br>
 Email: <input type="text" name = "email"> <br>
 Leadership Calling:  <select name='calling'>
@@ -61,7 +61,7 @@ echo "<option value='$calling_name'> $calling_name </option>" ;
 }
 ?></select><br>
 
-<!-- Opportunities: <select name='opportunity'>
+Opportunities: <select name='opportunity'>
 <option value='0'> None </option>
 <?php
 foreach ($opportunities as $op)
@@ -71,7 +71,7 @@ foreach ($opportunities as $op)
 
     echo "<option value='$op_id'> $op_name </option>" ;
 }
-?></select><br> -->
+?></select><br>
 <input type="submit" name="submit" value="Submit">
 </form>
 
