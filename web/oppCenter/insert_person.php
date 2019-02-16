@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 include("accessDB.php");
 // Sanatize input from form
@@ -52,7 +53,7 @@ if ($leader != "")
     $stmt2->execute();
 }
 
-$new_page ="personDetails.php?ward=$ward";
+$new_page ="home.php";
 header("Location: $new_page");
 die();
 ?>
