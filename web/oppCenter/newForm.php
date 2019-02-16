@@ -60,7 +60,8 @@ foreach ($callings as $calling)
 echo "<option value='$calling_name'> $calling_name </option>" ;
 }
 ?></select><br>
-Opportunities: <select name='opportunity'>
+
+<!-- Opportunities: <select name='opportunity'>
 <option value='0'> None </option>
 <?php
 foreach ($opportunities as $op)
@@ -70,7 +71,7 @@ foreach ($opportunities as $op)
 
     echo "<option value='$op_id'> $op_name </option>" ;
 }
-?></select><br>
+?></select><br> -->
 
 <input type="submit" name="submit" value="Submit">
 </form>
