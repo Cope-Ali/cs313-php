@@ -19,7 +19,7 @@ include("accessDB.php");
 
 <?php
     if($_GET['error'] == "true") {
-        echo "<h1> Please try again, Wrong password or username</h1>";
+        echo "<h2 style='color:red;'> Please try again, Wrong password or username</h2>";
     }
 ?>
 
