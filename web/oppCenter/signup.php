@@ -19,7 +19,7 @@ include("accessDB.php");
 <?php include("nav.php");?>
 
 <div class="container" >
-<h2> Please enter your new username and password </h2>
+<h2> Please create a username and password </h2>
 <form action="adduser.php" method="post">
     <input name="username" placeholder="Username">
     <input name="password" placeholder="Password">
