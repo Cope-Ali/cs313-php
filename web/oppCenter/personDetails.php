@@ -2,6 +2,7 @@
 //start session to store credentials
 session_start();
 include("accessDB.php");
+$user_id = $_SESSION['user_id'];
 
 $id = htmlspecialchars($_GET['id']);
 
@@ -85,6 +86,13 @@ $person_rows = $stmt1->fetchAll(PDO::FETCH_ASSOC);
         $status = $or['progress_status'];
 
         echo "<strong>Current Opportunities: " . $op_name . "</strong><br> Status: " . $status . '<br>';
+        echo "<form method = 'post' action='update_status.php'>
+        <input type='hidden' name='progress_id' value=$prog_id>
+        <input type='hidden' name='person_id' value =$id>
+        Update Status <select name='status'>
+        <option value='in_progress'> In Progress </option>
+        <option value='complete'> Complete </option> </select>
+        <input type = 'submit' name = 'update' value = 'Update'> </form>";
     }
 
     $stmt3 = $db->prepare('SELECT 
@@ -116,7 +124,7 @@ $person_rows = $stmt1->fetchAll(PDO::FETCH_ASSOC);
     echo "<form method='post' action='insert_note.php'>";
     echo "<input type='hidden' name='progress_id' value =" . $prog_id . ">";
     echo "<input type='hidden' name='person_id' value =" . $id . ">";
-    echo "<input type='hidden' name='leader_id' value ='1'>";
+    echo "<input type='hidden' name='leader_id' value =$user_id>";
     echo "<textarea name='note_text'></textarea>";
     echo "<input type='submit' value = 'Create Note'>";
     echo "</form>";
