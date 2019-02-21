@@ -124,7 +124,7 @@ $person_rows = $stmt1->fetchAll(PDO::FETCH_ASSOC);
     echo "<form method='post' action='insert_note.php'>";
     echo "<input type='hidden' name='progress_id' value =" . $prog_id . ">";
     echo "<input type='hidden' name='person_id' value =" . $id . ">";
-    echo "<input type='hidden' name='leader_id' value =$user_id>";
+    echo "<input type='hidden' name='leader_id' value ='1'>";
     echo "<textarea name='note_text'></textarea>";
     echo "<input type='submit' value = 'Create Note'>";
     echo "</form>";
