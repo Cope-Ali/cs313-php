@@ -14,6 +14,7 @@ include("accessDB.php");
     <link rel="stylesheet" href="oppStyle.css">
 </head>
 <body>
+<div class="container" >
 <h1> Please sign in: </h1>
 
 
@@ -30,5 +31,6 @@ include("accessDB.php");
 </form>
 <h2>New to the site? </h2>
 <a href="signup.php">Sign up now!</a> <br>
+</div>
 </body>
 </html>
