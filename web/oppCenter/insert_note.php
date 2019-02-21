@@ -1,6 +1,8 @@
 <?php
 session_start();
 include("accessDB.php");
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 $person_id = htmlspecialchars($_POST['person_id']);
 $progress_id = htmlspecialchars($_POST['progress_id']);
