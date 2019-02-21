@@ -55,6 +55,12 @@ CREATE TABLE notes (
     notes_date              DATE DEFAULT CURRENT_DATE
 );
 
+CREATE TABLE user_table (
+   user_id      serial          PRIMARY KEY,
+   username     text            NOT NULL Unique,
+   password     text            NOT NULL
+);
+
 --inset ward names --
 INSERT INTO wards(ward)
 VALUES

@@ -2,6 +2,10 @@
 <?php
 //start session to store credentials
 session_start();
+if(!isset($_SESSION['userAuthorized'])) {
+    session_destroy();
+    header("Location: signin.php");
+}
 include('accessDB.php');
 
 $query = 'select ward From wards';
@@ -23,7 +27,7 @@ $wards = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <?php include("nav.php");?>
 
 <div class="container" >
-
+<h1>Welcome <?php echo $_SESSION['userAuthorized']; ?></h1>
 
 <form action="" method="post">
 <h2>Search By:</h2>
