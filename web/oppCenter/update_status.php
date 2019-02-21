@@ -12,7 +12,7 @@ echo $person_id . " " . $progress_id . " " . $status;
 
 $stmt = $db->prepare('Update progress
     SET progress_status = :status
-    WHERE progress_id = :progress:id;');
+    WHERE progress_id = :progress_id;');
 $stmt->bindValue(':progress_id', $progress_id, PDO::PARAM_INT);
 $stmt->bindValue(':status', $status, PDO::PARAM_STR);
 $stmt->execute();
