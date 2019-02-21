@@ -90,7 +90,7 @@ $person_rows = $stmt1->fetchAll(PDO::FETCH_ASSOC);
         <input type='hidden' name='progress_id' value=$prog_id>
         <input type='hidden' name='person_id' value =$id>
         Update Status <select name='status'>
-        <option value='in_progress'> In Progress </option>
+        <option value='in progress'> In Progress </option>
         <option value='complete'> Complete </option> </select>
         <input type = 'submit' name = 'update' value = 'Update'> </form>";
     }
