@@ -17,7 +17,7 @@ $stmt->bindValue(':progress_id', $progress_id, PDO::PARAM_INT);
 $stmt->bindValue(':status', $status, PDO::PARAM_STR);
 $stmt->execute();
 
-// $new_page ="personDetails.php?id=$person_id";
-// header("Location: $new_page");
-// die();
+$new_page ="personDetails.php?id=$person_id";
+header("Location: $new_page");
+die();
 ?>
